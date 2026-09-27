@@ -1,0 +1,123 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "cleanUrls": false,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/index",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact.html",
+      "permanent": true
+    },
+    {
+      "source": "/pricing",
+      "destination": "/pricing.html",
+      "permanent": true
+    },
+    {
+      "source": "/price",
+      "destination": "/pricing.html",
+      "permanent": true
+    },
+    {
+      "source": "/service",
+      "destination": "/service.html",
+      "permanent": true
+    },
+    {
+      "source": "/flow",
+      "destination": "/flow.html",
+      "permanent": true
+    },
+    {
+      "source": "/faq",
+      "destination": "/faq.html",
+      "permanent": true
+    },
+    {
+      "source": "/recruit",
+      "destination": "/recruit.html",
+      "permanent": true
+    },
+    {
+      "source": "/cases",
+      "destination": "/case.html",
+      "permanent": true
+    },
+    {
+      "source": "/cases.html",
+      "destination": "/case.html",
+      "permanent": true
+    },
+    {
+      "source": "/case",
+      "destination": "/case.html",
+      "permanent": true
+    },
+    {
+      "source": "/voice",
+      "destination": "/voice.html",
+      "permanent": true
+    },
+    {
+      "source": "/column",
+      "destination": "/column.html",
+      "permanent": true
+    },
+    {
+      "source": "/column-:num(\\d+)",
+      "destination": "/column-:num.html",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=()"
+        }
+      ]
+    },
+    {
+      "source": "/images/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=2592000, stale-while-revalidate=604800"
+        }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=300, stale-while-revalidate=86400"
+        }
+      ]
+    }
+  ]
+}
