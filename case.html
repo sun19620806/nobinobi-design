@@ -18,24 +18,68 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Shippori+Mincho:wght@500;600;700;800&display=swap">
-<link rel="stylesheet" href="assets/styles.css?v=20260922">
-<link rel="stylesheet" href="assets/subpages.css?v=20260927">
+<link rel="stylesheet" href="assets/styles.css?v=20260929">
+<link rel="stylesheet" href="assets/subpages.css?v=20260929c">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
 {"@type":"ListItem","position":1,"name":"TOP","item":"https://www.nobinobi-homon.com/index.html"},
 {"@type":"ListItem","position":2,"name":"事例","item":"https://www.nobinobi-homon.com/case.html"}]}
 </script>
 <style>
-.case-intro{max-width:760px;margin:0 auto}
-.case{background:#fff;border:1px solid var(--line-soft,#ece6db);border-radius:18px;padding:26px 24px;margin:22px 0;box-shadow:0 6px 20px rgba(0,0,0,.04)}
-.case .cnum{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.06em;color:#8a6a12;background:#fdf3d6;border-radius:999px;padding:3px 12px}
-.case .ctheme{font-size:12.5px;color:#6b655c;margin-left:8px}
-.case h2{font-size:20px;margin:12px 0 10px;line-height:1.5}
-.case p.story{font-size:15.5px;line-height:1.95;color:#33302b;margin:0 0 14px}
-.case .takeaway{display:flex;gap:10px;align-items:flex-start;background:#f4f6ef;border-radius:12px;padding:12px 14px;font-size:13.5px;color:#4a5a3a;line-height:1.7}
-.case .takeaway b{color:#3a4a2a}
-.cdisc{max-width:760px;margin:26px auto 0;font-size:13px;color:#6b655c;line-height:1.8;background:#faf7f1;border-radius:14px;padding:18px 20px}
-.case-lead-note{max-width:760px;margin:14px auto 0;font-size:14px;color:#5a544c;line-height:1.9}
+.cs-page{padding-top:64px}
+.cs-head{text-align:center;max-width:760px;margin:0 auto}
+.cs-head .lead-sub{margin-top:14px;color:var(--gold-deep);font-weight:700;letter-spacing:.06em}
+.cs-lead{max-width:720px;margin:28px auto 0;text-align:center;color:var(--ink-soft)}
+.cs-index{max-width:980px;margin:44px auto 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.cs-index a{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 18px;transition:border-color .25s,box-shadow .25s,transform .25s}
+.cs-index a:hover{border-color:var(--gold);box-shadow:var(--shadow-sm);transform:translateY(-2px)}
+.cs-index .ix-n{grid-row:span 2;font-family:var(--font-serif);font-weight:800;font-size:28px;line-height:1;color:var(--gold)}
+.cs-index .ix-t{font-size:12.5px;font-weight:700;letter-spacing:.06em;color:var(--muted);line-height:1.5}
+.cs-index .ix-h{font-family:var(--font-serif);font-weight:700;font-size:15.5px;line-height:1.5;color:var(--ink)}
+.cs-list{max-width:1080px;margin:80px auto 0;display:flex;flex-direction:column;gap:96px}
+.cs{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:56px;align-items:start;scroll-margin-top:110px}
+.cs:nth-child(even) .cs-fig{order:2}
+.cs-fig{position:relative;margin:0}
+.cs-fig img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:26px;box-shadow:var(--shadow)}
+.cs-fig .cs-num{position:absolute;top:-22px;left:22px;font-family:var(--font-serif);font-weight:800;font-size:64px;line-height:1;color:var(--gold);text-shadow:0 2px 0 #fff,0 0 18px rgba(255,255,255,.9)}
+.cs:nth-child(even) .cs-num{left:auto;right:22px}
+.cs-meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.cs-meta .cs-case{font-size:12.5px;font-weight:700;letter-spacing:.12em;color:var(--gold-deep)}
+.cs-meta .cs-theme{font-size:13px;font-weight:700;letter-spacing:.04em;color:#6b5a2e;background:var(--gold-pale);border-radius:999px;padding:4px 14px;line-height:1.5}
+.cs-title{margin:14px 0 26px;font-family:var(--font-serif);font-weight:800;font-size:clamp(21px,18px + .8vw,27px);line-height:1.5;letter-spacing:.04em;color:var(--ink);font-feature-settings:"palt" 1}
+.cs-steps{margin:0;padding:0;list-style:none;position:relative}
+.cs-steps::before{content:"";position:absolute;left:6px;top:10px;bottom:10px;width:2px;background:linear-gradient(180deg,var(--gold-soft),var(--line))}
+.cs-steps li{position:relative;padding:0 0 22px 32px}
+.cs-steps li:last-child{padding-bottom:0}
+.cs-steps li::before{content:"";position:absolute;left:0;top:7px;width:14px;height:14px;border-radius:50%;background:#fff;border:3px solid var(--gold)}
+.cs-steps li:last-child::before{background:var(--gold)}
+.cs-steps b{display:block;font-size:13px;font-weight:700;letter-spacing:.08em;color:var(--gold-deep);line-height:1.6;margin-bottom:2px}
+.cs-steps p{margin:0;font-size:16.5px;line-height:1.95;color:#33302b}
+.cs-take{margin-top:28px;background:var(--gold-wash);border-radius:18px;padding:18px 22px}
+.cs-take b{display:block;font-size:13px;font-weight:700;letter-spacing:.08em;color:var(--gold-deep);margin-bottom:4px}
+.cs-take p{margin:0;font-family:var(--font-serif);font-weight:600;font-size:16.5px;line-height:1.85;color:var(--ink)}
+.cs-disc{max-width:760px;margin:96px auto 0;font-size:14px;color:#6b655c;line-height:1.85;background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px 24px}
+.cs-more{max-width:760px;margin:28px auto 0;text-align:center}
+.cs-more .btn{margin-bottom:18px}
+.cs-more p{margin:0;font-size:15px;line-height:1.9;color:var(--ink-soft)}
+.cs-more a:not(.btn){color:var(--gold-deep);text-decoration:underline;text-underline-offset:3px}
+@media (max-width:900px){
+ .cs-index{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .cs{grid-template-columns:1fr;gap:34px}
+ .cs:nth-child(even) .cs-fig{order:0}
+ .cs:nth-child(even) .cs-num{right:auto;left:22px}
+ .cs-list{gap:72px;margin-top:60px}
+}
+@media (max-width:560px){
+ .cs-page{padding-top:44px}
+ .cs-index{grid-template-columns:1fr;gap:10px;margin-top:32px}
+ .cs-index a{padding:13px 16px}
+ .cs-index .ix-n{font-size:24px}
+ .cs-fig img{border-radius:20px}
+ .cs-fig .cs-num{font-size:50px;top:-18px}
+ .cs-steps p,.cs-take p{font-size:16px}
+ .cs-disc{margin-top:72px;padding:18px 18px}
+}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[{"@type":"MedicalBusiness","@id":"https://www.nobinobi-homon.com/#osaka","name":"のびのび訪問施術院 大阪院","url":"https://www.nobinobi-homon.com/","telephone":"06-7777-7849","image":"https://www.nobinobi-homon.com/images/ogp.jpg","description":"医師の同意にもとづく医療保険（療養費）で受けられる訪問鍼灸マッサージ。国家資格者がご自宅・施設へうかがいます。1回総額3,950円、1割負担で約395円。対応エリア内は出張費なしで同額です。","medicalSpecialty":"PhysicalTherapy","priceRange":"¥395-¥1185","address":{"@type":"PostalAddress","postalCode":"532-0011","addressRegion":"大阪府","addressLocality":"大阪市淀川区","streetAddress":"西中島4-7-8 サンコープラザ 8D","addressCountry":"JP"},"openingHours":"Mo-Fr 09:00-18:00","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"18:00"}],"areaServed":[{"@type":"City","name":"豊中市"},{"@type":"City","name":"吹田市"},{"@type":"City","name":"茨木市"},{"@type":"City","name":"高槻市"},{"@type":"City","name":"箕面市"},{"@type":"City","name":"摂津市"},{"@type":"City","name":"池田市"},{"@type":"City","name":"尼崎市"},{"@type":"City","name":"伊丹市"},{"@type":"City","name":"大阪市淀川区"},{"@type":"City","name":"大阪市東淀川区"},{"@type":"City","name":"大阪市都島区"},{"@type":"City","name":"大阪市北区"},{"@type":"City","name":"大阪市旭区"}]},{"@type":"MedicalBusiness","@id":"https://www.nobinobi-homon.com/#tamagawa","name":"のびのび訪問施術院 玉川院","url":"https://www.nobinobi-homon.com/","telephone":"0120-641-104","image":"https://www.nobinobi-homon.com/images/ogp.jpg","description":"医師の同意にもとづく医療保険（療養費）で受けられる訪問鍼灸マッサージ。国家資格者がご自宅・施設へうかがいます。1回総額3,950円、1割負担で約395円。対応エリア内は出張費なしで同額です。","medicalSpecialty":"PhysicalTherapy","priceRange":"¥395-¥1185","address":{"@type":"PostalAddress","postalCode":"158-0094","addressRegion":"東京都","addressLocality":"世田谷区","streetAddress":"玉川3丁目21-21 203","addressCountry":"JP"},"openingHours":"Mo-Fr 09:00-18:00","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"18:00"}],"areaServed":[{"@type":"City","name":"世田谷区"},{"@type":"City","name":"川崎市宮前区"},{"@type":"City","name":"川崎市高津区"},{"@type":"City","name":"横浜市都筑区"},{"@type":"City","name":"横浜市青葉区"}]}]}
@@ -69,69 +113,75 @@
 </div>
 
 <main>
-<section class="section">
+<section class="section cs-page">
 <div class="wrap">
-<article class="article">
-<header class="article-head">
+<header class="cs-head article-head">
 <h1>生活の目標に向けた、変化の歩み</h1>
 <p class="lead-sub">「もう一度、これができた」を少しずつ増やすために</p>
 </header>
-
-<div class="article-body">
-
-<p class="lead case-intro">変化は、一直線ではありません。体調の良い日もあれば、痛みや疲れが強い日もあります。だからこそ、その日の状態を確かめながら、生活の目標に向けて一歩ずつ進めます。ここでは、実際にあった6つの歩みを、そのままご紹介します。</p>
-<p class="case-lead-note">どの歩みも、はじめの困りごとから、その日の体調に合わせた施術、ご本人の反応、そして次の目標へと、順を追ってご覧いただけます。うまくいった場面だけでなく、体調に合わせて内容を変えた場面も、あえてそのまま記しています。</p>
-
-<div class="case">
-<div><span class="cnum">CASE 01</span><span class="ctheme">冷え・しびれ・睡眠</span></div>
-<h2>足の冷えと、夜のしびれがやわらいだ実感</h2>
-<p class="story">左足の強い冷えと、夜間のしびれ、寝つきにくさがありました。刺激の感じ方や皮膚の状態を確かめながら、鍼・お灸・手技を細かく調整。続けるうちに、「左右の足が同じくらいの温かさになった」「夜のしびれが以前よりずっとまし」「寝つきも少し良くなった」といった声をいただいています。感じ方には個人差があります。</p>
-<div class="takeaway"><span>◎</span><p><b>ご本人の実感と、</b>やけどや刺激を確かめる安全への配慮を、いつもセットで考えています。</p></div>
-</div>
-
-<div class="case">
-<div><span class="cnum">CASE 02</span><span class="ctheme">安全管理・バイタル</span></div>
-<h2>数値を見て、「やらない・軽くする」判断も</h2>
-<p class="story">施術の前には、毎回、血圧・脈拍・SpO₂（血中の酸素）・体温を確認します。血圧が低い日は施術を軽めに変え、お薬でふらつきのある日は運動を止めました。SpO₂が一時的に下がったときは、施設の看護師さんと確認し、休んでから測り直して回復を確かめたうえで、慎重に対応しています。</p>
-<div class="takeaway"><span>◎</span><p><b>「やること」だけでなく「やらない判断」も、</b>安心して続けていただくために大切にしています。</p></div>
-</div>
-
-<div class="case">
-<div><span class="cnum">CASE 03</span><span class="ctheme">歩行・体力・段差</span></div>
-<h2>「近くのコンビニまで歩く」を目標に</h2>
-<p class="story">はじめは施設のなかでの歩行練習から。少しずつ屋外の駐車場を10分、15分と延ばし、傾斜や段差、階段の昇り降りにも取り組みました。暑い日や疲れの強い日は、無理をせず屋内の訓練やコンディショニングに切り替えます。そうしながら、ご本人と「来月は近くのコンビニまで歩こう」という具体的な目標を共有しています。</p>
-<div class="takeaway"><span>◎</span><p><b>歩いた距離だけでなく、</b>その日の体調を見て進め方を変える安全への配慮と、「どこまで行きたいか」という生活の目標まで、一緒に見ています。</p></div>
-</div>
-
-<div class="case">
-<div><span class="cnum">CASE 04</span><span class="ctheme">移乗・端座位</span></div>
-<h2>ベッドから車椅子へ。負担を減らす一歩</h2>
-<p class="story">左脚に痛みがあり、座ることへの不安も強い状態からのスタートでした。痛みの少ない姿勢を一緒に探しながら、端座位（ベッドの端に座る練習）と関節を動かす訓練を重ね、施術者の介助でベッドから車椅子への移乗ができるようになりました。施設の職員さん、看護師さん、ケアマネジャーとも目標を共有し、まずは「安定して座れること」を目指しています。</p>
-<div class="takeaway"><span>◎</span><p><b>ご本人の負担と、支える方の負担。</b>その両方を軽くする一歩を、みんなで見守っています。</p></div>
-</div>
-
-<div class="case">
-<div><span class="cnum">CASE 05</span><span class="ctheme">日常動作・転倒予防</span></div>
-<h2>できる動作が、少しずつ増えていく</h2>
-<p class="story">歩行やバランス、筋力の練習を続けるなかで、手を使わずにスクワットが5回できるようになりました。ベッドの上で足を組んで靴下を履く方法も身につき、ご家族と一緒に買い物へ出かける機会も増えていきました。もちろん、状態が変わったときには運動を止め、痛みへの対応を最優先にしています。</p>
-<div class="takeaway"><span>◎</span><p><b>良い変化だけでなく、</b>体調が変わったときにきちんと立ち止まる。その両方を含めて、誠実にお伝えしたい歩みです。</p></div>
-</div>
-
-<div class="case">
-<div><span class="cnum">CASE 06</span><span class="ctheme">下肢の動き・筋力</span></div>
-<h2>自分で足を上げる、足首を動かす</h2>
-<p class="story">下肢の関節を動かす訓練と筋力の練習を続けました。数日前までは難しかった足上げが自分でできるようになり、足首の動きも前の月より良くなってきています。ご本人の感覚と実際の動きに差があるときは、「今、動いていますよ」と具体的にお伝えしながら、一緒に練習を続けています。</p>
-<div class="takeaway"><span>◎</span><p><b>小さな変化を見のがさず、</b>「できている」を言葉にして、ご本人の自信につなげていきます。</p></div>
-</div>
-
-<p class="cdisc">ここでご紹介しているのは、実際の施術記録を、個人が特定されないように整えたものです。お身体の感じ方やあらわれる変化には個人差があり、同じ結果をお約束するものではありませんが、その日の体調に合わせて、無理のない一歩を一緒に重ねていきます。</p>
-
-<p style="text-align:center;margin-top:26px"><a href="voice.html" class="btn btn-ghost">患者様の声を見る<span class="arw"><svg><use href="#i-arrow"/></svg></span></a></p>
-<p class="sec-outro">ここでご紹介したような目標の立て方は<a href="column-181.html">また外を歩きたいを支える目標づくり</a>に、続ける期間の考え方は<a href="column-112.html">症状が落ち着いたらやめられる？</a>に書いています。実際にいただいたお言葉は<a href="voice.html">患者様の声</a>をご覧ください。</p>
-
-
+<p class="cs-lead">体の調子は、毎日同じではありません。調子の良い日もあれば、痛みや疲れが強い日もあります。私たちは訪問のたびにその日の状態を確かめ、ご本人の「こうなりたい」に向けて、少しずつ施術を積み重ねています。ここでは、うまくいった場面だけでなく、体調に合わせて内容を変えた場面も含めてご紹介します。</p>
+<nav class="cs-index" aria-label="事例の一覧"><a href="#case-01"><span class="ix-n">01</span><span class="ix-t">冷え・しびれ・睡眠</span><span class="ix-h">足の冷えと、夜のしびれがやわらいだ実感</span></a><a href="#case-02"><span class="ix-n">02</span><span class="ix-t">安全管理・バイタル</span><span class="ix-h">数値を見て、「やらない・軽くする」判断も</span></a><a href="#case-03"><span class="ix-n">03</span><span class="ix-t">歩行・体力・段差</span><span class="ix-h">「近くのコンビニまで歩く」を目標に</span></a><a href="#case-04"><span class="ix-n">04</span><span class="ix-t">移乗・端座位</span><span class="ix-h">ベッドから車椅子へ。負担を減らす一歩</span></a><a href="#case-05"><span class="ix-n">05</span><span class="ix-t">日常動作・転倒予防</span><span class="ix-h">できる動作が、少しずつ増えていく</span></a><a href="#case-06"><span class="ix-n">06</span><span class="ix-t">下肢の動き・筋力</span><span class="ix-h">自分で足を上げる、足首を動かす</span></a></nav>
+<div class="cs-list">
+<article class="cs" id="case-01">
+<figure class="cs-fig"><span class="cs-num" aria-hidden="true">01</span><img decoding="async" loading="lazy" src="images/nb-leg10.jpg" alt="ベッドに腰かけた女性の足をやさしくケアする施術者" width="1200" height="900"></figure>
+<div class="cs-body">
+<div class="cs-meta"><span class="cs-case">CASE 01</span><span class="cs-theme">冷え・しびれ・睡眠</span></div>
+<h2 class="cs-title">足の冷えと、夜のしびれがやわらいだ実感</h2>
+<ol class="cs-steps"><li><b>はじめ</b><p>左足の強い冷えと、夜間のしびれ、寝つきにくさがありました。</p></li><li><b>取り組み</b><p>刺激の感じ方や皮膚の状態を確かめながら、鍼・お灸・手技を細かく調整しました。</p></li><li><b>変化</b><p>「左右の足が同じくらいの温かさになった」「夜のしびれが以前よりずっとまし」「寝つきも少し良くなった」といった声をいただいています。感じ方には個人差があります。</p></li></ol>
+<div class="cs-take"><b>私たちが大切にしたこと</b><p>ご本人の実感と、やけどや刺激を確かめる安全への配慮を、いつもセットで考えています。</p></div>
 </div>
 </article>
+<article class="cs" id="case-02">
+<figure class="cs-fig"><span class="cs-num" aria-hidden="true">02</span><img decoding="async" loading="lazy" src="images/nb-record1.jpg" alt="施術前の記録をつける施術者" width="1200" height="900"></figure>
+<div class="cs-body">
+<div class="cs-meta"><span class="cs-case">CASE 02</span><span class="cs-theme">安全管理・バイタル</span></div>
+<h2 class="cs-title">数値を見て、「やらない・軽くする」判断も</h2>
+<ol class="cs-steps"><li><b>毎回の確認</b><p>施術の前には、毎回、血圧・脈拍・SpO₂（血中の酸素）・体温を確認します。</p></li><li><b>その日の判断</b><p>血圧が低い日は施術を軽めに変え、お薬でふらつきのある日は運動を止めました。</p></li><li><b>数値が変わったとき</b><p>SpO₂が一時的に下がったときは、施設の看護師さんと確認し、休んでから測り直して回復を確かめたうえで、慎重に対応しています。</p></li></ol>
+<div class="cs-take"><b>私たちが大切にしたこと</b><p>「やること」だけでなく「やらない判断」も、安心して続けていただくために大切にしています。</p></div>
+</div>
+</article>
+<article class="cs" id="case-03">
+<figure class="cs-fig"><span class="cs-num" aria-hidden="true">03</span><img decoding="async" loading="lazy" src="images/nb-walk3.jpg" alt="杖をついて廊下を歩く女性に付き添う施術者" width="1200" height="900"></figure>
+<div class="cs-body">
+<div class="cs-meta"><span class="cs-case">CASE 03</span><span class="cs-theme">歩行・体力・段差</span></div>
+<h2 class="cs-title">「近くのコンビニまで歩く」を目標に</h2>
+<ol class="cs-steps"><li><b>はじめ</b><p>施設のなかでの歩行練習から始めました。</p></li><li><b>取り組み</b><p>少しずつ屋外の駐車場を10分、15分と延ばし、傾斜や段差、階段の昇り降りにも取り組みました。暑い日や疲れの強い日は、無理をせず屋内の訓練やコンディショニングに切り替えます。</p></li><li><b>これから</b><p>ご本人と「来月は近くのコンビニまで歩こう」という具体的な目標を共有しています。</p></li></ol>
+<div class="cs-take"><b>私たちが大切にしたこと</b><p>歩いた距離だけでなく、その日の体調を見て進め方を変える安全への配慮と、「どこまで行きたいか」という生活の目標まで、一緒に見ています。</p></div>
+</div>
+</article>
+<article class="cs" id="case-04">
+<figure class="cs-fig"><span class="cs-num" aria-hidden="true">04</span><img decoding="async" loading="lazy" src="images/nb-wheel1.jpg" alt="車椅子の女性と目線を合わせて話す施術者" width="1200" height="900"></figure>
+<div class="cs-body">
+<div class="cs-meta"><span class="cs-case">CASE 04</span><span class="cs-theme">移乗・端座位</span></div>
+<h2 class="cs-title">ベッドから車椅子へ。負担を減らす一歩</h2>
+<ol class="cs-steps"><li><b>はじめ</b><p>左脚に痛みがあり、座ることへの不安も強い状態からのスタートでした。</p></li><li><b>取り組み</b><p>痛みの少ない姿勢を一緒に探しながら、端座位（ベッドの端に座る練習）と関節を動かす訓練を重ねました。</p></li><li><b>変化</b><p>施術者の介助で、ベッドから車椅子への移乗ができるようになりました。施設の職員さん、看護師さん、ケアマネジャーとも目標を共有し、まずは「安定して座れること」を目指しています。</p></li></ol>
+<div class="cs-take"><b>私たちが大切にしたこと</b><p>ご本人の負担と、支える方の負担。その両方を軽くする一歩を、みんなで見守っています。</p></div>
+</div>
+</article>
+<article class="cs" id="case-05">
+<figure class="cs-fig"><span class="cs-num" aria-hidden="true">05</span><img decoding="async" loading="lazy" src="images/nb-stand1.jpg" alt="椅子の背につかまって立ち上がりの練習をする女性と施術者" width="1200" height="900"></figure>
+<div class="cs-body">
+<div class="cs-meta"><span class="cs-case">CASE 05</span><span class="cs-theme">日常動作・転倒予防</span></div>
+<h2 class="cs-title">できる動作が、少しずつ増えていく</h2>
+<ol class="cs-steps"><li><b>取り組み</b><p>歩行やバランス、筋力の練習を続けました。</p></li><li><b>変化</b><p>手を使わずにスクワットが5回できるようになりました。ベッドの上で足を組んで靴下を履く方法も身につき、ご家族と一緒に買い物へ出かける機会も増えていきました。</p></li><li><b>立ち止まるとき</b><p>状態が変わったときには運動を止め、痛みへの対応を最優先にしています。</p></li></ol>
+<div class="cs-take"><b>私たちが大切にしたこと</b><p>良い変化だけでなく、体調が変わったときにきちんと立ち止まる。その両方を含めて、誠実にお伝えしたい歩みです。</p></div>
+</div>
+</article>
+<article class="cs" id="case-06">
+<figure class="cs-fig"><span class="cs-num" aria-hidden="true">06</span><img decoding="async" loading="lazy" src="images/nb-leg1.jpg" alt="横になった男性の脚の曲げ伸ばしを補助する施術者" width="1200" height="900"></figure>
+<div class="cs-body">
+<div class="cs-meta"><span class="cs-case">CASE 06</span><span class="cs-theme">下肢の動き・筋力</span></div>
+<h2 class="cs-title">自分で足を上げる、足首を動かす</h2>
+<ol class="cs-steps"><li><b>取り組み</b><p>下肢の関節を動かす訓練と筋力の練習を続けました。</p></li><li><b>変化</b><p>数日前までは難しかった足上げが自分でできるようになり、足首の動きも前の月より良くなってきています。</p></li><li><b>声かけ</b><p>ご本人の感覚と実際の動きに差があるときは、「今、動いていますよ」と具体的にお伝えしながら、一緒に練習を続けています。</p></li></ol>
+<div class="cs-take"><b>私たちが大切にしたこと</b><p>小さな変化を見のがさず、「できている」を言葉にして、ご本人の自信につなげていきます。</p></div>
+</div>
+</article>
+</div>
+<p class="cs-disc">ここでご紹介しているのは、実際の施術記録を、個人が特定されないように整えたものです。お身体の感じ方やあらわれる変化には個人差があり、同じ結果をお約束するものではありませんが、その日の体調に合わせて、無理のない一歩を一緒に重ねていきます。</p>
+<div class="cs-more">
+<a href="voice.html" class="btn btn-ghost">患者様の声を見る<span class="arw"><svg><use href="#i-arrow"/></svg></span></a>
+<p>目標の立て方については、コラム「<a href="column-181.html">また外を歩きたいを支える目標づくり</a>」で、施術を続ける期間の考え方については「<a href="column-112.html">症状が落ち着いたらやめられる？</a>」で詳しくご紹介しています。</p>
+</div>
 </div>
 </section>
 </main>
@@ -215,5 +265,6 @@
 </div>
 
 <script src="assets/main.js?v=20260922" defer></script>
+<link rel="stylesheet" href="assets/typography.css?v=20260929g">
 </body>
 </html>

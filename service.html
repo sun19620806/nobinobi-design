@@ -35,8 +35,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Shippori+Mincho:wght@500;600;700;800&display=swap">
-<link rel="stylesheet" href="assets/styles.css?v=20260922">
-<link rel="stylesheet" href="assets/subpages.css?v=20260927">
+<link rel="stylesheet" href="assets/styles.css?v=20260929">
+<link rel="stylesheet" href="assets/subpages.css?v=20260929c">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","serviceType":"訪問鍼灸マッサージ","name":"訪問はり・きゅう・マッサージ","provider":{"@type":"MedicalBusiness","name":"のびのび訪問施術院","url":"https://www.nobinobi-homon.com/","telephone":"06-7777-7849"},"areaServed":[{"@type":"City","name":"豊中市"},{"@type":"City","name":"吹田市"},{"@type":"City","name":"茨木市"},{"@type":"City","name":"高槻市"},{"@type":"City","name":"箕面市"},{"@type":"City","name":"摂津市"},{"@type":"City","name":"池田市"},{"@type":"City","name":"尼崎市"},{"@type":"City","name":"伊丹市"},{"@type":"City","name":"大阪市淀川区"},{"@type":"City","name":"大阪市東淀川区"},{"@type":"City","name":"大阪市都島区"},{"@type":"City","name":"大阪市北区"},{"@type":"City","name":"大阪市旭区"}],"description":"医師の同意にもとづく医療保険（療養費）で受けられる訪問鍼灸マッサージ。国家資格者がご自宅へうかがいます。1回総額3,950円、1割負担で約395円。対応エリア内は出張費なしで同額です。"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"TOP","item":"https://www.nobinobi-homon.com/"},{"@type":"ListItem","position":2,"name":"サービス内容","item":"https://www.nobinobi-homon.com/service.html"}]}</script>
 <script type="application/ld+json">
@@ -132,7 +132,7 @@
       "name": "ご家族が立ち会えなくても大丈夫ですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "大丈夫です。ご本人おひとりのところへうかがう形で続けておられる方はたくさんいます。その日の様子は電話か報告書でお伝えします。初回だけ立ち会っていただけると、目標やご希望をうかがいやすくなります。"
+        "text": "大丈夫です。ご家族が不在の時間に、ご本人おひとりで受けておられる方も多くいらっしゃいます。その日の様子は電話か報告書でお伝えします。初回だけ立ち会っていただけると、目標やご希望をうかがいやすくなります。"
       }
     },
     {
@@ -190,6 +190,37 @@
 </div>
 
 <main>
+<style>
+.mth{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1fr);align-items:stretch;gap:0 14px;max-width:1040px;margin:0 auto}
+.mth-card{position:relative;overflow:hidden;background:#fff;border-radius:26px;padding:34px 30px 32px;box-shadow:0 1px 0 var(--line),0 14px 34px rgba(120,90,20,.08);transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s}
+.mth-card:hover{transform:translateY(-6px);box-shadow:0 1px 0 var(--line),0 22px 44px rgba(120,90,20,.13)}
+.mth-glyph{width:96px;height:96px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 30%,#FFF6DA,var(--gold-pale) 70%);font-family:var(--font-serif);font-weight:800;font-size:48px;line-height:1;color:var(--gold-deep);margin-bottom:22px;box-shadow:inset 0 0 0 1px var(--gold-soft)}
+.mth-card::after{content:"";position:absolute;right:-40px;bottom:-40px;width:140px;height:140px;border-radius:50%;background:var(--gold-wash);z-index:0}
+.mth-card>*{position:relative;z-index:1}
+.mth-no{margin:0 0 4px;font-family:var(--font-serif);font-weight:700;font-size:14px;letter-spacing:.14em;color:var(--gold-deep);line-height:1.4}
+.mth-card .mth-h{margin:0 0 12px;font-family:var(--font-serif);font-weight:800;font-size:clamp(22px,19px + .6vw,26px);line-height:1.4;letter-spacing:.06em;color:var(--ink)}
+.mth-txt{margin:0;font-size:var(--t-small,15.5px);line-height:1.9;color:var(--ink-soft);text-wrap:pretty}
+.mth-plus{align-self:center;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--gold);color:#fff;font-weight:700;font-size:18px;line-height:1;box-shadow:0 6px 14px rgba(242,180,23,.35)}
+.anshin{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));background:#fff;border-radius:28px;box-shadow:0 1px 0 var(--line),0 16px 40px rgba(120,90,20,.08);overflow:hidden}
+.an-item{padding:40px 36px 38px;position:relative}
+.an-item+.an-item::before{content:"";position:absolute;left:0;top:36px;bottom:36px;border-left:1px dashed #E6D9B8}
+.an-ic{width:60px;height:60px;border-radius:18px;display:grid;place-items:center;background:var(--gold);box-shadow:0 8px 18px rgba(242,180,23,.3);margin-bottom:20px}
+.an-ic svg{width:30px;height:30px;stroke:#fff;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.an-no{margin:0 0 6px;font-size:13px;font-weight:700;letter-spacing:.1em;color:var(--gold-deep);line-height:1.5}
+.an-item .an-h{margin:0 0 12px;font-family:var(--font-serif);font-weight:800;font-size:clamp(19px,17px + .5vw,22px);line-height:1.5;letter-spacing:.04em;color:var(--ink)}
+.an-txt{margin:0;font-size:var(--t-small,15.5px);line-height:1.9;color:var(--ink-soft);text-wrap:pretty}
+@media (max-width:900px){
+ .mth{grid-template-columns:1fr;gap:12px;max-width:520px}
+ .mth-card{display:grid;grid-template-columns:auto 1fr;column-gap:20px;align-items:center;padding:24px 22px}
+ .mth-glyph{grid-row:span 3;width:76px;height:76px;font-size:38px;margin:0}
+ .mth-card .mth-h{margin-bottom:6px}
+ .mth-plus{justify-self:center;width:28px;height:28px;font-size:15px}
+ .anshin{grid-template-columns:1fr;max-width:560px;margin:0 auto}
+ .an-item{padding:28px 26px;display:grid;grid-template-columns:auto 1fr;column-gap:18px}
+ .an-ic{grid-row:span 3;width:52px;height:52px;border-radius:15px;margin:2px 0 0}
+ .an-item+.an-item::before{left:26px;right:26px;top:0;bottom:auto;border-left:0;border-top:1px dashed #E6D9B8}
+}
+</style>
 <section class="section">
   <div class="wrap">
     <div class="feature reveal">
@@ -211,22 +242,12 @@
       <p>お身体の状態に合わせて、はり・きゅう・マッサージを行います。</p>
 <p class="note-sm" style="margin-top:14px">のびのびは、はり・きゅうを施術のベースにしています。その日の体の状態を確認しながら鍼やお灸を行い、必要に応じて手技やストレッチ、無理のない範囲で身体を動かす運動なども組み合わせます。どの施術がどの療養費の対象になるかは、体の状態と医師の同意によって決まります。お問い合わせのときに、その方の場合をご説明します。</p>
     </div>
-    <div class="method-cards reveal">
-      <div class="method-card">
-        <span class="m-ic"><svg viewBox="0 0 24 24"><use href="#i-needle"/></svg></span>
-        <h3>はり（鍼）</h3>
-        <p>細い鍼で、こりや痛みに<br>やさしくアプローチ。</p>
-      </div>
-      <div class="method-card">
-        <span class="m-ic"><svg viewBox="0 0 24 24"><use href="#i-moxa"/></svg></span>
-        <h3>きゅう（灸）</h3>
-        <p>心地よい温かさで、<br>血行を促し巡りを整えます。</p>
-      </div>
-      <div class="method-card">
-        <span class="m-ic"><svg viewBox="0 0 24 24"><use href="#i-hand"/></svg></span>
-        <h3>マッサージ</h3>
-        <p>手技でこわばりをほぐし、<br>動きをサポート。</p>
-      </div>
+    <div class="mth reveal">
+      <article class="mth-card"><div class="mth-glyph" aria-hidden="true">鍼</div><p class="mth-no">01</p><h3 class="mth-h">はり</h3><p class="mth-txt">細い鍼で、こりや痛みにやさしくアプローチします。</p></article>
+      <span class="mth-plus" aria-hidden="true">＋</span>
+      <article class="mth-card"><div class="mth-glyph" aria-hidden="true">灸</div><p class="mth-no">02</p><h3 class="mth-h">きゅう</h3><p class="mth-txt">心地よい温かさで、血行を促し巡りを整えます。</p></article>
+      <span class="mth-plus" aria-hidden="true">＋</span>
+      <article class="mth-card"><div class="mth-glyph" aria-hidden="true">按</div><p class="mth-no">03</p><h3 class="mth-h">マッサージ</h3><p class="mth-txt">手技でこわばりをほぐし、動きをサポートします。</p></article>
     </div>
   </div>
 </section>
@@ -236,11 +257,11 @@
     <div class="shead reveal">
       <h2><span class="title-mark">3つ</span>の安心</h2>
     </div>
-    <div class="cards3">
-      <div class="icard reveal"><span class="ic"><svg><use href="#i-badge"/></svg></span><h3>国家資格者が施術</h3><p>はり師・きゅう師・あん摩マッサージ指圧師など、国家資格を持つ施術者が担当します。</p></div>
-      <div class="icard reveal"><span class="ic"><svg><use href="#i-pin"/></svg></span><h3>ご自宅・施設へ訪問</h3><p>移動の負担なく、住み慣れた場所で施術を受けられます。施設での利用も可能です。</p></div>
-      <div class="icard reveal"><span class="ic"><svg><use href="#i-insurance"/></svg></span><h3>医療保険で安心の料金</h3><p>医師の同意のもと医療保険が使え、1回395円〜の負担で施術が受けられます。費用を抑えて続けやすいのも安心です。</p></div>
-    </div>
+    <div class="anshin reveal">
+      <div class="an-item"><span class="an-ic"><svg><use href="#i-badge"/></svg></span><p class="an-no">安心 1</p><h3 class="an-h">国家資格者が施術</h3><p class="an-txt">はり師・きゅう師・あん摩マッサージ指圧師など、国家資格を持つ施術者が担当します。</p></div>
+      <div class="an-item"><span class="an-ic"><svg><use href="#i-pin"/></svg></span><p class="an-no">安心 2</p><h3 class="an-h">ご自宅・施設へ訪問</h3><p class="an-txt">移動の負担なく、住み慣れた場所で施術を受けられます。施設での利用も可能です。</p></div>
+      <div class="an-item"><span class="an-ic"><svg><use href="#i-insurance"/></svg></span><p class="an-no">安心 3</p><h3 class="an-h">医療保険で続けやすい料金</h3><p class="an-txt">医師の同意があれば医療保険が使え、自己負担は1回395円から。費用を抑えて続けられます。</p></div>
+    </div></div>
   </div>
 </section><style>
 .svc-values{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:38px}
@@ -265,23 +286,31 @@
 <div class="svc-values reveal"><div class="svcv" data-n="01"><h3>まず、その日の体調を確かめる</h3><p>血圧・脈拍・SpO₂・体温を確認し、その日の状態を見極めてから施術を始めます。数値だけでなく、睡眠や食欲、痛み、疲れ、お薬のあとの変化まで、ていねいに伺います。</p></div><div class="svcv" data-n="02"><h3>痛みだけでなく、生活の動作を見る</h3><p>歩く、立つ、座る、車椅子へ移る、靴下を履く、買い物へ行く。日常で困っているその動作を、そのまま施術の目標にします。</p></div><div class="svcv" data-n="03"><h3>小さくても、具体的な目標を持つ</h3><p>「近くのコンビニまで歩きたい」「もう一度自分で移りたい」。目標がはっきりすると、毎回の施術で何を練習するかが見えてきます。</p></div><div class="svcv" data-n="04"><h3>強さも姿勢も、一人ひとりに合わせる</h3><p>強めが心地よい方、鍼の響きが苦手な方、座るのがつらい方。反応を確かめながら、力加減や鍼の深さ、体の向きを細かく調整します。</p></div><div class="svcv" data-n="05"><h3>ご家族・施設・看護師とつなぐ</h3><p>ご本人の変化を施術者だけで抱えません。ご家族や施設の職員さん、看護師、ケアマネジャーと共有し、安全で現実的な支援につなげます。</p></div><div class="svcv" data-n="06"><h3>何気ない会話も、大切な情報</h3><p>昔の仕事、家族、旅行、歌、好きな食べ物。ふとした会話から、意欲や不安、暮らしの変化が見えることがあります。毎回記録し、次の関わりに生かします。</p></div></div>
 </div></section>
 
+<style>
+.nayami{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;max-width:1040px;margin:0 auto}
+.ny-col{background:#fff;border-radius:24px;padding:30px 30px 26px;box-shadow:0 1px 0 var(--line),0 12px 30px rgba(120,90,20,.07)}
+.ny-cat{display:flex;align-items:baseline;gap:12px;margin:0 0 14px;padding-bottom:16px;border-bottom:2px solid var(--gold-pale);font-family:var(--font-serif);font-weight:800;font-size:clamp(19px,17px + .5vw,22px);line-height:1.4;letter-spacing:.05em;color:var(--ink)}
+.ny-n{font-size:15px;font-weight:700;letter-spacing:.1em;color:var(--gold-deep)}
+.ny-col ul{list-style:none;margin:0;padding:0}
+.ny-col li{position:relative;padding:13px 0 13px 30px;font-size:var(--t-body,17px);font-weight:500;line-height:1.6;color:var(--ink);border-bottom:1px dashed #EDE3CB}
+.ny-col li:last-child{border-bottom:0}
+.ny-col li::before{content:"";position:absolute;left:2px;top:50%;width:16px;height:9px;margin-top:-7px;border-left:2.5px solid var(--gold);border-bottom:2.5px solid var(--gold);transform:rotate(-45deg)}
+.ny-foot{margin:34px auto 0;text-align:center;font-size:var(--t-body,17px);line-height:1.9;color:var(--ink-soft);display:flex;flex-wrap:wrap;justify-content:center;gap:4px 14px}
+.ny-foot a{color:var(--gold-deep);font-weight:700;text-decoration:underline;text-underline-offset:4px}
+@media (max-width:900px){.nayami{grid-template-columns:1fr;max-width:520px;gap:14px}.ny-col{padding:24px 22px 18px;border-radius:20px}}
+</style>
 <section class="section">
   <div class="wrap">
     <div class="shead reveal">
       <h2>こんな<span class="title-mark">お悩み</span>はありませんか？</h2>
       <p>訪問鍼灸マッサージは、日々のつらさや不安に寄り添います。</p>
     </div>
-    <div class="symptom-grid reveal">
-      <span class="symptom-card">肩・腰の痛み</span>
-      <span class="symptom-card">膝など関節のこわばり</span>
-      <span class="symptom-card">歩行がつらい</span>
-      <span class="symptom-card">手足のしびれ・むくみ</span>
-      <span class="symptom-card">麻痺・拘縮</span>
-      <span class="symptom-card">寝たきりの予防</span>
-      <span class="symptom-card">冷え・血行不良</span>
-      <span class="symptom-card">リハビリの継続</span>
-      <span class="symptom-card">退院後のケア</span>
-    </div>
+    <div class="nayami reveal">
+<div class="ny-col"><p class="ny-cat"><span class="ny-n">01</span>痛み・こわばり</p><ul><li>肩・腰の痛み</li><li>膝など関節のこわばり</li><li>麻痺・拘縮</li></ul></div>
+<div class="ny-col"><p class="ny-cat"><span class="ny-n">02</span>動き・暮らし</p><ul><li>歩行がつらい</li><li>寝たきりの予防</li><li>リハビリの継続</li><li>退院後のケア</li></ul></div>
+<div class="ny-col"><p class="ny-cat"><span class="ny-n">03</span>しびれ・めぐり</p><ul><li>手足のしびれ・むくみ</li><li>冷え・血行不良</li></ul></div>
+</div>
+<p class="ny-foot reveal">ひとつでも当てはまることがあれば、お気軽にご相談ください。<a href="contact.html?type=trial">無料体験のお申し込みはこちら</a></p>
   </div>
 </section>
 
@@ -289,11 +318,11 @@
 <section class="section sec-cream">
 <div class="wrap">
 <div class="shead reveal">
-<h2>施術についてよくいただくご質問</h2>
+<h2>施術についてよく頂くご質問</h2>
 <p>はじめての方からいただくことの多いご質問をまとめました。</p>
 </div>
-<div class="nbfaq reveal"><div class="nbfaq-card"><p class="nbfaq-q"><span class="nbfaq-b nbfaq-bq">Q</span><span>どんな施術をするのですか？</span></p><p class="nbfaq-a"><span class="nbfaq-b nbfaq-ba">A</span><span>はり・きゅうを施術のベースにしています。その日の体の状態を確認しながら鍼やお灸を行い、必要に応じて手技やストレッチ、無理のない範囲で身体を動かす運動なども組み合わせます。どの施術がどの療養費の対象になるかは体の状態と医師の同意によって決まりますので、お問い合わせのときにご説明します。</span></p></div><div class="nbfaq-card"><p class="nbfaq-q"><span class="nbfaq-b nbfaq-bq">Q</span><span>鍼は痛くないですか？</span></p><p class="nbfaq-a"><span class="nbfaq-b nbfaq-ba">A</span><span>使うのは髪の毛ほどの細さの鍼で、はじめての方でも「思っていたより何も感じない」と言われることが多いものです。刺す深さや本数は体の状態とご希望に合わせて調整しますので、苦手な場合はお伝えください。鍼を使わず手技とお灸だけで進めることもできます。</span></p></div><div class="nbfaq-card"><p class="nbfaq-q"><span class="nbfaq-b nbfaq-bq">Q</span><span>お灸は熱くないですか？</span></p><p class="nbfaq-a"><span class="nbfaq-b nbfaq-ba">A</span><span>台座のついたお灸を使い、心地よいと感じる温かさで行います。熱さの感じ方は人によって違いますので、少しでも熱いと感じたらすぐにお伝えください。皮膚の弱い方には温める道具を変えることもあります。</span></p></div><div class="nbfaq-card"><p class="nbfaq-q"><span class="nbfaq-b nbfaq-bq">Q</span><span>どんな症状が対象になりますか？</span></p><p class="nbfaq-a"><span class="nbfaq-b nbfaq-ba">A</span><span>はり・きゅうの療養費の対象として定められているのは、神経痛・リウマチ・頸肩腕症候群・五十肩・腰痛症・頸椎捻挫後遺症の6つです。ご相談が多いのは、脳梗塞のあとのこわばりや麻痺、膝や腰の痛み、手足のしびれ、パーキンソン病にともなう動かしにくさです。</span></p></div><div class="nbfaq-card"><p class="nbfaq-q"><span class="nbfaq-b nbfaq-bq">Q</span><span>1回どのくらいの時間ですか？</span></p><p class="nbfaq-a"><span class="nbfaq-b nbfaq-ba">A</span><span>20分から30分ほどが目安です。体の状態やその日の調子によって前後します。時間が長くかかった日も短く終えた日も、料金は同じです。</span></p></div><div class="nbfaq-card"><p class="nbfaq-q"><span class="nbfaq-b nbfaq-bq">Q</span><span>寝たきりでも、車いすでも受けられますか？</span></p><p class="nbfaq-a"><span class="nbfaq-b nbfaq-ba">A</span><span>受けられます。ベッドの上でも、車いすに座ったままでも施術します。姿勢を無理に変えることはしません。部屋を片づけていただく必要もなく、ふだん過ごしておられるままの場所でお受けいただけます。</span></p></div><div class="nbfaq-card"><p class="nbfaq-q"><span class="nbfaq-b nbfaq-bq">Q</span><span>着替える必要はありますか？</span></p><p class="nbfaq-a"><span class="nbfaq-b nbfaq-ba">A</span><span>ふだんの服装のままで結構です。袖や裾をまくらせていただく程度ですので、着替えの準備はいりません。</span></p></div><div class="nbfaq-card"><p class="nbfaq-q"><span class="nbfaq-b nbfaq-bq">Q</span><span>どのくらいの間隔で受けるものですか？</span></p><p class="nbfaq-a"><span class="nbfaq-b nbfaq-ba">A</span><span>週1回から2回で始める方が多いです。体の状態を見ながら間隔を調整します。同じ曜日・同じ時間での定期訪問をご希望になる方が多く、暮らしのリズムに組み込みやすい形にできます。</span></p></div><div class="nbfaq-card"><p class="nbfaq-q"><span class="nbfaq-b nbfaq-bq">Q</span><span>毎回同じ人が来ますか？</span></p><p class="nbfaq-a"><span class="nbfaq-b nbfaq-ba">A</span><span>できるだけ同じ担当者が続けてうかがいます。前回との違いや小さな変化に気づきやすく、安心して受けていただけます。</span></p></div><div class="nbfaq-card"><p class="nbfaq-q"><span class="nbfaq-b nbfaq-bq">Q</span><span>いつ来てもらえますか？</span></p><p class="nbfaq-a"><span class="nbfaq-b nbfaq-ba">A</span><span>平日の9時から18時までです。土曜・日曜・祝日はお休みをいただいています。デイサービスに行っておられる方は、通所のない曜日に組むのが基本です。</span></p></div><div class="nbfaq-card"><p class="nbfaq-q"><span class="nbfaq-b nbfaq-bq">Q</span><span>ご家族が立ち会えなくても大丈夫ですか？</span></p><p class="nbfaq-a"><span class="nbfaq-b nbfaq-ba">A</span><span>大丈夫です。ご本人おひとりのところへうかがう形で続けておられる方はたくさんいます。その日の様子は電話か報告書でお伝えします。初回だけ立ち会っていただけると、目標やご希望をうかがいやすくなります。</span></p></div><div class="nbfaq-card"><p class="nbfaq-q"><span class="nbfaq-b nbfaq-bq">Q</span><span>まず何から始めればいいですか？</span></p><p class="nbfaq-a"><span class="nbfaq-b nbfaq-ba">A</span><span>お電話かお問い合わせフォームからご連絡ください。体の状態と通院の事情をうかがい、保険の対象になりそうかをご説明します。そのうえで無料体験を受けていただき、続けるかどうかを決めていただく流れです。</span></p></div></div>
-<p class="sec-outro">ここに載せきれない細かい疑問は、コラムにまとめています。料金や同意書、介護保険との関係は<a href="column-266.html">よくある疑問から探す</a>、体の症状ごとの話は<a href="column-264.html">相談の多い症状から探す</a>をご覧ください。</p>
+<div class="nbfaq reveal"><div class="nbfaq-card"><p class="nbfaq-q"><span class="nbfaq-b nbfaq-bq">Q</span><span>どんな施術をするのですか？</span></p><p class="nbfaq-a"><span class="nbfaq-b nbfaq-ba">A</span><span>はり・きゅうを施術のベースにしています。その日の体の状態を確認しながら鍼やお灸を行い、必要に応じて手技やストレッチ、無理のない範囲で身体を動かす運動なども組み合わせます。どの施術がどの療養費の対象になるかは体の状態と医師の同意によって決まりますので、お問い合わせのときにご説明します。</span></p></div><div class="nbfaq-card"><p class="nbfaq-q"><span class="nbfaq-b nbfaq-bq">Q</span><span>鍼は痛くないですか？</span></p><p class="nbfaq-a"><span class="nbfaq-b nbfaq-ba">A</span><span>使うのは髪の毛ほどの細さの鍼で、はじめての方でも「思っていたより何も感じない」と言われることが多いものです。刺す深さや本数は体の状態とご希望に合わせて調整しますので、苦手な場合はお伝えください。鍼を使わず手技とお灸だけで進めることもできます。</span></p></div><div class="nbfaq-card"><p class="nbfaq-q"><span class="nbfaq-b nbfaq-bq">Q</span><span>お灸は熱くないですか？</span></p><p class="nbfaq-a"><span class="nbfaq-b nbfaq-ba">A</span><span>台座のついたお灸を使い、心地よいと感じる温かさで行います。熱さの感じ方は人によって違いますので、少しでも熱いと感じたらすぐにお伝えください。皮膚の弱い方には温める道具を変えることもあります。</span></p></div><div class="nbfaq-card"><p class="nbfaq-q"><span class="nbfaq-b nbfaq-bq">Q</span><span>どんな症状が対象になりますか？</span></p><p class="nbfaq-a"><span class="nbfaq-b nbfaq-ba">A</span><span>はり・きゅうの療養費の対象として定められているのは、神経痛・リウマチ・頸肩腕症候群・五十肩・腰痛症・頸椎捻挫後遺症の6つです。ご相談が多いのは、脳梗塞のあとのこわばりや麻痺、膝や腰の痛み、手足のしびれ、パーキンソン病にともなう動かしにくさです。</span></p></div><div class="nbfaq-card"><p class="nbfaq-q"><span class="nbfaq-b nbfaq-bq">Q</span><span>1回どのくらいの時間ですか？</span></p><p class="nbfaq-a"><span class="nbfaq-b nbfaq-ba">A</span><span>20分から30分ほどが目安です。体の状態やその日の調子によって前後します。時間が長くかかった日も短く終えた日も、料金は同じです。</span></p></div><div class="nbfaq-card"><p class="nbfaq-q"><span class="nbfaq-b nbfaq-bq">Q</span><span>寝たきりでも、車いすでも受けられますか？</span></p><p class="nbfaq-a"><span class="nbfaq-b nbfaq-ba">A</span><span>受けられます。ベッドの上でも、車いすに座ったままでも施術します。姿勢を無理に変えることはしません。部屋を片づけていただく必要もなく、ふだん過ごしておられるままの場所でお受けいただけます。</span></p></div><div class="nbfaq-card"><p class="nbfaq-q"><span class="nbfaq-b nbfaq-bq">Q</span><span>着替える必要はありますか？</span></p><p class="nbfaq-a"><span class="nbfaq-b nbfaq-ba">A</span><span>ふだんの服装のままで結構です。袖や裾をまくらせていただく程度ですので、着替えの準備はいりません。</span></p></div><div class="nbfaq-card"><p class="nbfaq-q"><span class="nbfaq-b nbfaq-bq">Q</span><span>どのくらいの間隔で受けるものですか？</span></p><p class="nbfaq-a"><span class="nbfaq-b nbfaq-ba">A</span><span>週1回から2回で始める方が多いです。体の状態を見ながら間隔を調整します。同じ曜日・同じ時間での定期訪問をご希望になる方が多く、暮らしのリズムに組み込みやすい形にできます。</span></p></div><div class="nbfaq-card"><p class="nbfaq-q"><span class="nbfaq-b nbfaq-bq">Q</span><span>毎回同じ人が来ますか？</span></p><p class="nbfaq-a"><span class="nbfaq-b nbfaq-ba">A</span><span>できるだけ同じ担当者が続けてうかがいます。前回との違いや小さな変化に気づきやすく、安心して受けていただけます。</span></p></div><div class="nbfaq-card"><p class="nbfaq-q"><span class="nbfaq-b nbfaq-bq">Q</span><span>いつ来てもらえますか？</span></p><p class="nbfaq-a"><span class="nbfaq-b nbfaq-ba">A</span><span>平日の9時から18時までです。土曜・日曜・祝日はお休みをいただいています。デイサービスに行っておられる方は、通所のない曜日に組むのが基本です。</span></p></div><div class="nbfaq-card"><p class="nbfaq-q"><span class="nbfaq-b nbfaq-bq">Q</span><span>ご家族が立ち会えなくても大丈夫ですか？</span></p><p class="nbfaq-a"><span class="nbfaq-b nbfaq-ba">A</span><span>大丈夫です。ご家族が不在の時間に、ご本人おひとりで受けておられる方も多くいらっしゃいます。その日の様子は電話か報告書でお伝えします。初回だけ立ち会っていただけると、目標やご希望をうかがいやすくなります。</span></p></div><div class="nbfaq-card"><p class="nbfaq-q"><span class="nbfaq-b nbfaq-bq">Q</span><span>まず何から始めればいいですか？</span></p><p class="nbfaq-a"><span class="nbfaq-b nbfaq-ba">A</span><span>お電話かお問い合わせフォームからご連絡ください。体の状態と通院の事情をうかがい、保険の対象になりそうかをご説明します。そのうえで無料体験を受けていただき、続けるかどうかを決めていただく流れです。</span></p></div></div>
+<p class="sec-outro">ここに載せきれなかった疑問には、コラムでお答えしています。料金・同意書・介護保険との関係は「<a href="column-266.html">よくある疑問から探す</a>」から、症状ごとの内容は「<a href="column-264.html">相談の多い症状から探す</a>」からご覧ください。</p>
 </div>
 </section>
 </main>
@@ -413,5 +442,6 @@
 </div>
 
 <script src="assets/main.js?v=20260922" defer></script>
+<link rel="stylesheet" href="assets/typography.css?v=20260929g">
 </body>
 </html>

@@ -714,3 +714,8 @@ main:focus{ outline:none; }
   .clinic-card .crow:has(.cval.tel){ align-items:center; }
   .clinic-card .cval.tel{ min-height:44px; display:flex; align-items:center; }
 }
+
+/* ===== 写真トーン統一（全ページ共通） ===== */
+:root{ --photo-filter:saturate(1.06) contrast(1.02) brightness(1.01) sepia(.06); }
+body:not(#_t) :is(.media,.cf-thumb,.col-thumb,.article-hero,.article-fig,.cimg,.method-img,.cb-photo,.work-img,.pn-img,.col-sec-thumb,.cc-thumb,.nc-img,.tpc-img,.cs-fig,.feature-img) img{ filter:var(--photo-filter); }
+body:not(#_t) :is(.cs-fig,.work-img,.method-img,.cb-photo) img{ border-radius:26px; }

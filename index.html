@@ -39,7 +39,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Shippori+Mincho:wght@500;600;700;800&display=swap">
-<link rel="stylesheet" href="assets/styles.css?v=20260922">
+<link rel="stylesheet" href="assets/styles.css?v=20260929">
+<script defer src="https://unpkg.com/d3@7.9.0/dist/d3.min.js" integrity="sha384-CjloA8y00+1SDAUkjs099PVfnY2KmDC2BZnws9kh8D/lX1s46w6EPhpXdqMfjK6i" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -121,6 +122,89 @@
   </div>
 </section>
 
+<!-- ============ 3つの安心 ============ -->
+<section class="section tp-anshin"><div class="wrap">
+<div class="shead reveal"><h2><span class="title-mark">3つ</span>の安心</h2></div>
+<div class="anshin reveal">
+<div class="an-item"><span class="an-ic"><svg><use href="#i-badge"/></svg></span><p class="an-no">安心 1</p><h3 class="an-h">国家資格者が施術</h3><p class="an-txt">はり師・きゅう師・あん摩マッサージ指圧師など、国家資格を持つ施術者が担当します。</p></div>
+<div class="an-item"><span class="an-ic"><svg><use href="#i-pin"/></svg></span><p class="an-no">安心 2</p><h3 class="an-h">ご自宅・施設へ訪問</h3><p class="an-txt">移動の負担なく、住み慣れた場所で施術を受けられます。施設での利用も可能です。</p></div>
+<div class="an-item"><span class="an-ic"><svg><use href="#i-shield"/></svg></span><p class="an-no">安心 3</p><h3 class="an-h">医療保険で続けやすい料金</h3><p class="an-txt">医師の同意があれば医療保険が使え、自己負担は1回395円から。費用を抑えて続けられます。</p></div>
+</div>
+</div></section>
+<!-- ============ 患者様の声 ============ -->
+<style>
+.vm-sec .shead{text-align:center}
+.vm-rows{display:flex;flex-direction:column;gap:30px;margin:40px 0 38px}
+.vmarquee{overflow:hidden;padding:6px 0 22px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.vmarquee-track{display:flex;align-items:center;gap:22px;width:max-content;animation:vscroll 70s linear infinite}
+.vmarquee--rev .vmarquee-track{animation-duration:80s;animation-direction:reverse}
+.vm-rows:hover .vmarquee-track{animation-play-state:paused}
+.vmarquee .vq{position:relative;flex:0 0 auto;width:max-content;min-width:220px;max-width:300px;margin:0;display:flex;flex-direction:column;background:#fff;border-radius:22px;padding:26px 26px 20px;box-shadow:0 1px 0 #EFE7D6,0 10px 28px rgba(120,90,20,.07);transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s ease}
+.vmarquee .vq::after{content:"";position:absolute;left:34px;bottom:-11px;width:22px;height:12px;background:#fff;clip-path:polygon(0 0,100% 0,18% 100%);filter:drop-shadow(0 4px 4px rgba(120,90,20,.05))}
+.vmarquee .vq blockquote{margin:0}
+.vmarquee .vq--wide{max-width:400px}
+.vmarquee .vq blockquote::before{content:"\201C";display:block;height:30px;margin:-4px 0 6px -2px;font-family:Georgia,"Times New Roman",serif;font-size:54px;line-height:1;color:#F2B417}
+.vmarquee .vq p{margin:0;font-family:var(--font-serif,"Shippori Mincho",serif);font-size:16px;line-height:1.9;letter-spacing:.03em;color:#2E2A24;font-weight:600;text-wrap:pretty}
+.vmarquee .vq figcaption{margin-top:18px;padding-top:14px;border-top:1px dashed #EADFC6;display:flex;align-items:center;gap:8px;font-size:12.5px;font-weight:700;letter-spacing:.06em;color:#9A7A2C}
+.vmarquee .vq figcaption::before{content:"";width:7px;height:7px;border-radius:50%;background:#F2B417;flex:0 0 auto}
+.vmarquee .vq:hover{transform:translateY(-5px);box-shadow:0 1px 0 #EFE7D6,0 18px 38px rgba(120,90,20,.13)}
+.vm-cta{display:flex;justify-content:center;align-items:center;gap:16px;flex-wrap:wrap}
+@keyframes vscroll{from{transform:translateX(0)}to{transform:translateX(calc(-50% - 11px))}}
+@media(max-width:680px){
+ .vm-rows{gap:22px;margin:28px 0 28px}
+ .vmarquee{padding-bottom:18px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
+ .vmarquee-track{gap:16px}
+ .vmarquee .vq{min-width:190px;max-width:250px;padding:22px 20px 16px;border-radius:18px}
+ .vmarquee .vq--wide{max-width:290px}
+ .vmarquee .vq::after{left:26px}
+ .vmarquee .vq p{font-size:15px;line-height:1.85}
+ .vmarquee .vq figcaption{margin-top:14px;padding-top:12px;font-size:12px}
+ @keyframes vscroll{from{transform:translateX(0)}to{transform:translateX(calc(-50% - 8px))}}
+ .vm-cta .btn{width:100%;justify-content:center;max-width:320px}
+}
+@media(prefers-reduced-motion:reduce){.vmarquee-track{animation:none}.vmarquee{overflow-x:auto;-webkit-mask-image:none;mask-image:none}}
+</style><section class="section vm-sec"><div class="wrap">
+<div class="shead reveal"><h2>患者様の<span class="title-mark">声</span></h2><p>施術のなかでいただいたお言葉と、実際の事例をご紹介します。</p></div>
+<div class="vm-rows reveal">
+<div class="vmarquee"><div class="vmarquee-track"><figure class="vq vq--wide"><blockquote><p>足が楽になります。特に膝の裏は自分では触れないので、やってもらえるとうれしいです。</p></blockquote><figcaption>下肢のケア</figcaption></figure><figure class="vq vq--wide"><blockquote><p>以前は左足が特に冷たかったのですが、今は左右が同じくらい。夜のしびれも、以前よりずっとましになりました。</p></blockquote><figcaption>冷え・しびれ</figcaption></figure><figure class="vq vq--wide"><blockquote><p>とても気持ちがよかったです。できれば、もう1日増やしたいです。</p></blockquote><figcaption>施術の時間</figcaption></figure><figure class="vq"><blockquote><p>施術をしてもらった日は、よく眠れます。</p></blockquote><figcaption>むくみのケア</figcaption></figure><figure class="vq"><blockquote><p>本当に痛みがなくなって、すっきりしました。</p></blockquote><figcaption>施術直後のご感想</figcaption></figure><figure class="vq"><blockquote><p>鍼をしてもらうとスッキリするので、うれしいです。</p></blockquote><figcaption>鍼の施術</figcaption></figure><figure class="vq vq--wide" aria-hidden="true"><blockquote><p>足が楽になります。特に膝の裏は自分では触れないので、やってもらえるとうれしいです。</p></blockquote><figcaption>下肢のケア</figcaption></figure><figure class="vq vq--wide" aria-hidden="true"><blockquote><p>以前は左足が特に冷たかったのですが、今は左右が同じくらい。夜のしびれも、以前よりずっとましになりました。</p></blockquote><figcaption>冷え・しびれ</figcaption></figure><figure class="vq vq--wide" aria-hidden="true"><blockquote><p>とても気持ちがよかったです。できれば、もう1日増やしたいです。</p></blockquote><figcaption>施術の時間</figcaption></figure><figure class="vq" aria-hidden="true"><blockquote><p>施術をしてもらった日は、よく眠れます。</p></blockquote><figcaption>むくみのケア</figcaption></figure><figure class="vq" aria-hidden="true"><blockquote><p>本当に痛みがなくなって、すっきりしました。</p></blockquote><figcaption>施術直後のご感想</figcaption></figure><figure class="vq" aria-hidden="true"><blockquote><p>鍼をしてもらうとスッキリするので、うれしいです。</p></blockquote><figcaption>鍼の施術</figcaption></figure></div></div>
+<div class="vmarquee vmarquee--rev"><div class="vmarquee-track"><figure class="vq"><blockquote><p>今日くらいの強さが、ちょうどいいです。</p></blockquote><figcaption>強さの調整</figcaption></figure><figure class="vq"><blockquote><p>荷物を下ろしたみたい。</p></blockquote><figcaption>肩まわりのケア</figcaption></figure><figure class="vq"><blockquote><p>腰は少しずつ治ってきた感じがします。</p></blockquote><figcaption>腰のケア</figcaption></figure><figure class="vq"><blockquote><p>足がしっかり温まりました。</p></blockquote><figcaption>お灸のあとで</figcaption></figure><figure class="vq"><blockquote><p>着圧ソックスを、以前ほどきつく感じなくなりました。</p></blockquote><figcaption>むくみの変化</figcaption></figure><figure class="vq"><blockquote><p>気持ちいい。手が手じゃないみたい。</p></blockquote><figcaption>手・腕のケア</figcaption></figure><figure class="vq" aria-hidden="true"><blockquote><p>今日くらいの強さが、ちょうどいいです。</p></blockquote><figcaption>強さの調整</figcaption></figure><figure class="vq" aria-hidden="true"><blockquote><p>荷物を下ろしたみたい。</p></blockquote><figcaption>肩まわりのケア</figcaption></figure><figure class="vq" aria-hidden="true"><blockquote><p>腰は少しずつ治ってきた感じがします。</p></blockquote><figcaption>腰のケア</figcaption></figure><figure class="vq" aria-hidden="true"><blockquote><p>足がしっかり温まりました。</p></blockquote><figcaption>お灸のあとで</figcaption></figure><figure class="vq" aria-hidden="true"><blockquote><p>着圧ソックスを、以前ほどきつく感じなくなりました。</p></blockquote><figcaption>むくみの変化</figcaption></figure><figure class="vq" aria-hidden="true"><blockquote><p>気持ちいい。手が手じゃないみたい。</p></blockquote><figcaption>手・腕のケア</figcaption></figure></div></div>
+</div>
+<div class="vm-cta reveal"><a href="voice.html" class="btn btn-gold">患者様の声を読む<span class="arw"><svg><use href="#i-chev"/></svg></span></a><a href="case.html" class="btn btn-ghost">事例を見る<span class="arw"><svg><use href="#i-chev"/></svg></span></a></div>
+</div></section>
+
+<!-- ============ 事例 ============ -->
+<section class="section tp-case"><div class="wrap">
+<div class="shead reveal"><h2>「できた」が<span class="title-mark">増えていく</span></h2><p>「また歩きたい」「自分で移りたい」。そんな目標に向けて、一歩ずつ重ねてきた実際の事例です。</p></div>
+<div class="tpc-grid reveal"><a href="case.html#case-01" class="tpc"><div class="tpc-img"><img decoding="async" loading="lazy" width="1200" height="900" src="images/nb-leg10.jpg" alt=""></div><div class="tpc-body"><p class="tpc-no">CASE 01<span>冷え・しびれ・睡眠</span></p><h3 class="tpc-h">足の冷えと、夜のしびれがやわらいだ実感</h3></div></a><a href="case.html#case-02" class="tpc"><div class="tpc-img"><img decoding="async" loading="lazy" width="1200" height="900" src="images/nb-record1.jpg" alt=""></div><div class="tpc-body"><p class="tpc-no">CASE 02<span>安全管理・バイタル</span></p><h3 class="tpc-h">数値を見て、「やらない・軽くする」判断も</h3></div></a><a href="case.html#case-03" class="tpc"><div class="tpc-img"><img decoding="async" loading="lazy" width="1200" height="900" src="images/nb-walk3.jpg" alt=""></div><div class="tpc-body"><p class="tpc-no">CASE 03<span>歩行・体力・段差</span></p><h3 class="tpc-h">「近くのコンビニまで歩く」を目標に</h3></div></a></div>
+<p class="tp-more reveal"><a href="case.html" class="btn btn-ghost">事例をすべて見る<span class="arw"><svg><use href="#i-chev"/></svg></span></a></p>
+</div></section>
+<!-- ============ 料金 ============ -->
+<section class="section tp-price"><div class="wrap">
+<div class="tpp reveal">
+<div class="tpp-main"><p class="tpp-k">医療保険を使った場合の自己負担</p><p class="tpp-num"><span>1回</span><b>約395</b><span>円〜</span></p><p class="tpp-sub">1割負担・ご自宅でお一人の場合。週2回でひと月 約3,160円</p></div>
+<ul class="tpp-list"><li>介護保険の限度額とは別枠</li><li>要介護認定がなくても利用できます</li></ul>
+<div class="tpp-btns"><a href="pricing.html" class="btn btn-gold">料金表を見る<span class="arw"><svg><use href="#i-chev"/></svg></span></a><a href="#check" class="btn btn-ghost">対象になるか診断する<span class="arw"><svg><use href="#i-chev"/></svg></span></a></div>
+</div>
+</div></section>
+<!-- ============ かんたん診断 ============ -->
+<section class="section chk-sec" id="check"><div class="wrap">
+<div class="shead reveal"><h2>保険で受けられる？<span class="title-mark">かんたん診断</span></h2><p>4つの質問に答えるだけで、医療保険が使えそうかと、次に何をすればよいかが分かります。</p></div>
+<div data-nb-check></div>
+</div></section>
+<!-- ============ ご利用の流れ ============ -->
+<section class="section tp-flow"><div class="wrap">
+<div class="shead reveal"><h2>ご利用の<span class="title-mark">流れ</span></h2><p>お問い合わせから、早ければ数日で施術を始められます。</p></div>
+<ol class="tpf reveal"><li><span class="tpf-n">1</span><h3 class="tpf-h">お問い合わせ</h3><p>お電話かフォームで、体の状態と通院の様子をうかがいます。</p></li><li class="is-key"><span class="tpf-n">2</span><h3 class="tpf-h">無料体験<em>おすすめ</em></h3><p>実際に施術を受けていただき、続けるかを決めていただけます。</p></li><li><span class="tpf-n">3</span><h3 class="tpf-h">同意書・日程の調整</h3><p>同意書の段取りと、訪問の曜日・時間を決めます。</p></li><li><span class="tpf-n">4</span><h3 class="tpf-h">訪問・施術</h3><p>その日の体調を確かめながら施術します。</p></li><li><span class="tpf-n">5</span><h3 class="tpf-h">経過の共有</h3><p>ご家族やケアマネジャーと、体の様子を共有します。</p></li></ol>
+<p class="tp-more reveal"><a href="flow.html" class="btn btn-ghost">ご利用の流れをくわしく見る<span class="arw"><svg><use href="#i-chev"/></svg></span></a></p>
+</div></section>
+<!-- ============ 対応エリア ============ -->
+<section class="section area-sec">
+  <div class="wrap">
+    <div class="shead reveal"><h2>対応<span class="title-mark">エリア</span></h2><p>ご自宅・施設へうかがえる地域です。</p></div>
+    <div class="reveal" data-nb-area></div>
+  </div>
+</section>
+
 <!-- ============ サポート帯 1 ============ -->
 <!-- ============ ナビゲーションカード ============ -->
 <section class="section navcards-sec">
@@ -150,46 +234,7 @@
   </div>
 </section>
 
-<!-- ============ 対応エリア ============ -->
-<section class="section area-sec">
-  <div class="wrap">
-    <div class="area-img reveal">
-      <img decoding="async" loading="lazy" width="1600" height="686" src="images/area.jpg?v=2" alt="対応エリア｜大阪院：大阪市（淀川区・東淀川区・都島区・北区・旭区）・豊中市・吹田市・茨木市・高槻市・箕面市・摂津市・池田市・尼崎市・伊丹市 など。玉川院：東京都世田谷区・神奈川県川崎市宮前区・高津区・横浜市都筑区・青葉区 など。順次対応エリア拡大中です。記載のないエリアもお気軽にご相談ください。">
-    </div>
-  </div>
-</section>
-
 <!-- ============ 入社祝い金バナー ============ -->
-<style>
-.vm-sec .shead{text-align:center}
-.vm-rows{display:flex;flex-direction:column;gap:18px;margin:34px 0 30px}
-.vmarquee{overflow:hidden;padding:8px 0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 11%,#000 89%,transparent);mask-image:linear-gradient(90deg,transparent,#000 11%,#000 89%,transparent)}
-.vmarquee-track{display:flex;gap:18px;width:max-content;animation:vscroll 64s linear infinite}
-.vmarquee--rev .vmarquee-track{animation-duration:78s;animation-direction:reverse}
-.vm-rows:hover .vmarquee-track{animation-play-state:paused}
-.vmarquee .vq{flex:0 0 auto;max-width:400px;display:flex;gap:15px;align-items:stretch;background:#fff;border:1px solid #EFE7D6;border-radius:20px;padding:21px 25px;box-shadow:0 6px 20px rgba(120,90,20,.05);transition:transform .3s cubic-bezier(.22,1,.36,1),box-shadow .3s ease,border-color .3s ease}
-.vmarquee .vq::before{content:"";flex:0 0 4px;border-radius:4px;background:linear-gradient(180deg,#F2B417,#F7DA97)}
-.vmarquee .vq p{margin:0;font-size:15px;line-height:1.95;letter-spacing:.02em;color:#33302B;font-weight:500;text-wrap:pretty}
-.vmarquee .vq:hover{transform:translateY(-5px);box-shadow:0 16px 34px rgba(120,90,20,.11);border-color:#E9DCBB}
-.vm-cta{display:flex;justify-content:center;align-items:center;gap:16px;flex-wrap:wrap;margin-top:2px}
-@keyframes vscroll{from{transform:translateX(0)}to{transform:translateX(calc(-50% - 9px))}}
-@media(max-width:680px){
- .vm-rows{gap:14px;margin:26px 0 24px}
- .vmarquee{-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
- .vmarquee .vq{max-width:74vw;padding:18px 20px}
- .vmarquee .vq p{font-size:14.5px;line-height:1.9}
- .vm-cta .btn{width:100%;justify-content:center;max-width:320px}
-}
-@media(prefers-reduced-motion:reduce){.vmarquee-track{animation:none}.vmarquee{overflow-x:auto;-webkit-mask-image:none;mask-image:none}}
-</style><section class="section vm-sec"><div class="wrap">
-<div class="shead reveal"><h2>患者様の<span class="title-mark">声</span></h2><p>日々の施術の中でいただいた、患者様からの声や実際の事例もご紹介しています。</p></div>
-<div class="vm-rows reveal">
-<div class="vmarquee"><div class="vmarquee-track"><div class="vq"><p>足が楽になります。特に膝の裏は自分では触れないので、やってもらえるとうれしいです。</p></div><div class="vq"><p>以前は左足が特に冷たかったのですが、今は左右が同じくらい。夜のしびれも、以前よりずっとましになりました。</p></div><div class="vq"><p>とても気持ちがよかったです。できれば、もう1日増やしたいです。</p></div><div class="vq"><p>施術をしてもらった日は、よく眠れます。</p></div><div class="vq"><p>本当に痛みがなくなって、すっきりしました。</p></div><div class="vq"><p>気持ちいい。手が手じゃないみたい。</p></div><div class="vq"><p>鍼をしてもらうとスッキリするので、うれしいです。</p></div><div class="vq"><p>足が楽になります。特に膝の裏は自分では触れないので、やってもらえるとうれしいです。</p></div><div class="vq"><p>以前は左足が特に冷たかったのですが、今は左右が同じくらい。夜のしびれも、以前よりずっとましになりました。</p></div><div class="vq"><p>とても気持ちがよかったです。できれば、もう1日増やしたいです。</p></div><div class="vq"><p>施術をしてもらった日は、よく眠れます。</p></div><div class="vq"><p>本当に痛みがなくなって、すっきりしました。</p></div><div class="vq"><p>気持ちいい。手が手じゃないみたい。</p></div><div class="vq"><p>鍼をしてもらうとスッキリするので、うれしいです。</p></div></div></div></div>
-<div class="vmarquee vmarquee--rev"><div class="vmarquee-track"><div class="vq"><p>今日くらいの強さが、ちょうどいいです。</p></div><div class="vq"><p>荷物を下ろしたみたい。</p></div><div class="vq"><p>腰は少しずつ治ってきた感じがします。</p></div><div class="vq"><p>足がしっかり温まりました。</p></div><div class="vq"><p>着圧ソックスを、以前ほどきつく感じなくなりました。</p></div><div class="vq"><p>気持ちがいいです。</p></div><div class="vq"><p>今日くらいの強さが、ちょうどいいです。</p></div><div class="vq"><p>荷物を下ろしたみたい。</p></div><div class="vq"><p>腰は少しずつ治ってきた感じがします。</p></div><div class="vq"><p>足がしっかり温まりました。</p></div><div class="vq"><p>着圧ソックスを、以前ほどきつく感じなくなりました。</p></div><div class="vq"><p>気持ちがいいです。</p></div></div></div></div>
-</div>
-<div class="vm-cta reveal"><a href="voice.html" class="btn btn-gold">患者様の声を読む<span class="arw"><svg><use href="#i-chev"/></svg></span></a><a href="case.html" class="btn btn-ghost">事例を見る<span class="arw"><svg><use href="#i-chev"/></svg></span></a></div>
-</div></section>
-
 <section class="bonus-band">
   <div class="wrap">
     <a href="recruit.html" class="bonus-link reveal">
@@ -303,7 +348,10 @@
   </div>
 </div>
 
-<link rel="stylesheet" href="assets/top.css?v=20260927">
+<link rel="stylesheet" href="assets/top.css?v=20260929b">
+<script src="assets/area-map.js?v=20260929" defer></script>
+<script src="assets/check.js?v=20260929b" defer></script>
 <script src="assets/main.js?v=20260922" defer></script>
+<link rel="stylesheet" href="assets/typography.css?v=20260929g">
 </body>
 </html>

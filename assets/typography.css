@@ -1,0 +1,542 @@
+/* ============================================================
+   Typography — sitewide single source of truth (loaded last)
+   9-step scale. 見出し=Shippori Mincho / 本文・UI=Noto Sans JP
+   ============================================================ */
+:root{
+  --font-sans:"Noto Sans JP",system-ui,-apple-system,"Hiragino Sans",sans-serif;
+  --font-serif:"Shippori Mincho","Noto Serif JP","Hiragino Mincho ProN",serif;
+  --font-accent:var(--font-serif);
+  --font-round:var(--font-sans);
+  --t-display:clamp(28px, 21px + 1.9vw, 40px);
+  --t-h2:clamp(23px, 18.5px + 1.15vw, 31px);
+  --t-h3:clamp(19px, 17px + .5vw, 22px);
+  --t-h4:18px;
+  --t-lead:19px;
+  --t-body:17px;
+  --t-ui:16px;
+  --t-small:15.5px;
+  --t-note:14px;
+  --t-label:13px;
+  --lh-display:1.42;
+  --lh-head:1.55;
+  --lh-body:1.95;
+  --lh-small:1.85;
+  /* legacy tokens → new scale */
+  --fs-h1:var(--t-display); --fs-h2:var(--t-h2); --fs-h3:var(--t-h3); --fs-h4:var(--t-h4);
+  --fs-lead:var(--t-lead); --fs-read:var(--t-body); --fs-body:var(--t-body); --fs-ui:var(--t-small);
+  --fs-card:var(--t-small); --fs-cap:var(--t-small); --fs-note:var(--t-note); --fs-eyebrow:var(--t-label);
+  --lh-read:var(--lh-body); --ls-body:.03em; --ls-head:.04em;
+}
+@media (max-width:760px){
+  :root{ --t-h4:17px; --t-lead:17.5px; --t-body:16.5px; --t-ui:15.5px; --t-small:15px; --t-note:13.5px; --t-label:12.5px; --lh-body:1.9; }
+}
+body:not(#_t) { font-family:var(--font-sans); font-size:var(--t-body); line-height:var(--lh-body); letter-spacing:.03em; font-feature-settings:normal; color:var(--ink-soft); }
+body:not(#_t) h1,body:not(#_t) h2,body:not(#_t) h3,body:not(#_t) h4,body:not(#_t) h5{ font-feature-settings:"palt" 1; text-wrap:balance; }
+body:not(#_t) p,body:not(#_t) li,body:not(#_t) dd,body:not(#_t) td{ text-wrap:pretty; }
+body:not(#_t) strong,body:not(#_t) b{ font-weight:700; }
+
+/* display */
+body:not(#_t) .page-hero h1,
+body:not(#_t) .article-head h1,
+body:not(#_t) .article .article-head h1,
+body:not(#_t) .feature h1,
+body:not(#_t) .intro h1,
+body:not(#_t) .page-head h1,
+body:not(#_t) .case-head h1,
+body:not(#_t) .intro-title{ font-family:var(--font-serif);font-size:var(--t-display);line-height:var(--lh-display);letter-spacing:.05em;font-weight:800;font-feature-settings:"palt" 1; }
+
+/* h2 */
+body:not(#_t) .shead h2,
+body:not(#_t) .intro h2,
+body:not(#_t) .intro .intro-h,
+body:not(#_t) .intro h2.intro-h,
+body:not(#_t) .cta-band h2,
+body:not(#_t) .cta-head,
+body:not(#_t) .page-nav .nav-head h2,
+body:not(#_t) .symptom-head h2,
+body:not(#_t) .feature h2,
+body:not(#_t) .faq-cat,
+body:not(#_t) .article-body h2,
+body:not(#_t) .article-body > h2,
+body:not(#_t) .article .article-body > h2{ font-family:var(--font-serif) !important;font-size:var(--t-h2) !important;line-height:var(--lh-head) !important;letter-spacing:.05em !important;font-weight:800 !important;font-feature-settings:"palt" 1 !important; }
+
+/* h3 */
+body:not(#_t) .icard h3,
+body:not(#_t) .method-card h3,
+body:not(#_t) .tl-card h3,
+body:not(#_t) .note-box h3,
+body:not(#_t) .side-card h3,
+body:not(#_t) .trial-side-card h3,
+body:not(#_t) .cf-body h3,
+body:not(#_t) .cb-body h3,
+body:not(#_t) .work-text h3,
+body:not(#_t) .article-body h3,
+body:not(#_t) .article-body > h3,
+body:not(#_t) .article .article-body > h3,
+body:not(#_t) .field-note h3,
+body:not(#_t) .wrap h3:not([class]),
+body:not(#_t) .section h3:not([class]),
+body:not(#_t) .block-title,
+body:not(#_t) .flow-sec .flow-title,
+body:not(#_t) .area-title,
+body:not(#_t) .related-h,
+body:not(#_t) #form-done h3,
+body:not(#_t) .sal-role,
+body:not(#_t) .feature h3{ font-family:var(--font-serif) !important;font-size:var(--t-h3) !important;line-height:var(--lh-head) !important;letter-spacing:.04em !important;font-weight:700 !important;font-feature-settings:"palt" 1 !important; }
+
+/* h4 */
+body:not(#_t) .col-body h3,
+body:not(#_t) .related-grid .col-body h3,
+body:not(#_t) .svcv h3,
+body:not(#_t) .casebox h3,
+body:not(#_t) .case h2,
+body:not(#_t) .case h3,
+body:not(#_t) .pn-body h4,
+body:not(#_t) .nc-body h3,
+body:not(#_t) .symptom-card,
+body:not(#_t) .faq-q,
+body:not(#_t) .col-faq-q,
+body:not(#_t) .nbfaq-q,
+body:not(#_t) .article-body .nbfaq-q,
+body:not(#_t) .article-body .col-faq-q,
+body:not(#_t) .article .col-faq-q,
+body:not(#_t) .foot-cols h4,
+body:not(#_t) .toc-head,
+body:not(#_t) .clinic-pick .pick-ttl,
+body:not(#_t) .intro-label,
+body:not(#_t) .article-body .pull .pull-t,
+body:not(#_t) .cc-title,
+body:not(#_t) .col-row-t,
+body:not(#_t) .rc-body b,
+body:not(#_t) .col-sec-txt b,
+body:not(#_t) .clinic-card .clinic-badge,
+body:not(#_t) .psim-label b,
+body:not(#_t) .wrap .field-note h3,
+body:not(#_t) .wrap .note-box h3,
+body:not(#_t) .wrap .example-box h3{ font-family:var(--font-serif) !important;font-size:var(--t-h4) !important;line-height:1.6 !important;letter-spacing:.04em !important;font-weight:700 !important;font-feature-settings:"palt" 1 !important; }
+
+/* lead */
+body:not(#_t) .article-body .lead,
+body:not(#_t) .article-body > .lead,
+body:not(#_t) .article .article-body > .lead,
+body:not(#_t) .intro-lead,
+body:not(#_t) .band-lead,
+body:not(#_t) .article-head .lead-sub,
+body:not(#_t) .article .article-head .lead-sub,
+body:not(#_t) .page-sub{ font-size:var(--t-lead);line-height:var(--lh-body);letter-spacing:.03em; }
+
+/* quote */
+body:not(#_t) .cb-quote,
+body:not(#_t) .article-body .voice,
+body:not(#_t) .field-note blockquote,
+body:not(#_t) .vmarquee .vq p{ font-family:var(--font-serif);font-size:var(--t-body);line-height:var(--lh-body);letter-spacing:.03em;font-weight:600; }
+
+/* body */
+body:not(#_t) .article-body p,
+body:not(#_t) .article-body li,
+body:not(#_t) .article-body > p,
+body:not(#_t) .article .article-body > p,
+body:not(#_t) .article-body > ul li,
+body:not(#_t) .article-body > ol li,
+body:not(#_t) .shead p,
+body:not(#_t) .intro p,
+body:not(#_t) .intro > p,
+body:not(#_t) .feature p,
+body:not(#_t) .feature > div > p,
+body:not(#_t) .feature ul li,
+body:not(#_t) .casebox p,
+body:not(#_t) .work-text p,
+body:not(#_t) .faq-a-inner,
+body:not(#_t) .col-faq-a,
+body:not(#_t) .article .col-faq-a,
+body:not(#_t) .nbfaq-a,
+body:not(#_t) .article-body .nbfaq-a,
+body:not(#_t) .article-body .col-faq-a,
+body:not(#_t) .pull p,
+body:not(#_t) .article .pull p,
+body:not(#_t) .article-body .pull p,
+body:not(#_t) .article-body .pull li,
+body:not(#_t) .jobtable td,
+body:not(#_t) .cb-body p,
+body:not(#_t) .field-note p,
+body:not(#_t) .symptom-head p,
+body:not(#_t) .cf-body p,
+body:not(#_t) .inline-cta a,
+body:not(#_t) .col-empty,
+body:not(#_t) .trust-list li,
+body:not(#_t) .sec-outro{ font-size:var(--t-body);line-height:var(--lh-body);letter-spacing:.03em; }
+
+/* small */
+body:not(#_t) .icard p,
+body:not(#_t) .method-card p,
+body:not(#_t) .tl-card p,
+body:not(#_t) .svcv p,
+body:not(#_t) .case p,
+body:not(#_t) .side-card p,
+body:not(#_t) .note-box li,
+body:not(#_t) .col-body p,
+body:not(#_t) .pn-body p,
+body:not(#_t) .nc-body p,
+body:not(#_t) .area-row p,
+body:not(#_t) .foot-brand p,
+body:not(#_t) .foot-cols a,
+body:not(#_t) .ptable th,
+body:not(#_t) .ptable td,
+body:not(#_t) .jobtable th,
+body:not(#_t) .chip,
+body:not(#_t) .col-tab,
+body:not(#_t) .col-more,
+body:not(#_t) .cf-body .col-more,
+body:not(#_t) .toc-list a,
+body:not(#_t) #article-toc a,
+body:not(#_t) .article #article-toc a,
+body:not(#_t) .sal-break li,
+body:not(#_t) .tsc-list li,
+body:not(#_t) .trial-note p,
+body:not(#_t) .example-box .cond,
+body:not(#_t) .example-foot .efl,
+body:not(#_t) .reco li,
+body:not(#_t) .band-items li,
+body:not(#_t) .flow p,
+body:not(#_t) .hand,
+body:not(#_t) .ins-note,
+body:not(#_t) .cval,
+body:not(#_t) .price-hero .note,
+body:not(#_t) .recruit-note,
+body:not(#_t) .sal-note,
+body:not(#_t) .area-expand,
+body:not(#_t) .col-jump-btn,
+body:not(#_t) .cc-sub,
+body:not(#_t) .cgrid-more,
+body:not(#_t) .psim-seg button,
+body:not(#_t) .mpick span,
+body:not(#_t) .tpick-box,
+body:not(#_t) .hero-feats li,
+body:not(#_t) .cf-chip,
+body:not(#_t) .jt-sub,
+body:not(#_t) .bonus-highlight .bh-note,
+body:not(#_t) .rc-body em,
+body:not(#_t) .col-sec-txt em,
+body:not(#_t) .toc-toggle,
+body:not(#_t) .psim-sub span,
+body:not(#_t) .psim-label,
+body:not(#_t) .col-count,
+body:not(#_t) .case .who,
+body:not(#_t) .cb-person span,
+body:not(#_t) .sal-sub,
+body:not(#_t) .nbfaq-b,
+body:not(#_t) .field label,
+body:not(#_t) .tl-card p,
+body:not(#_t) .icard p{ font-size:var(--t-small);line-height:var(--lh-small);letter-spacing:.03em; }
+
+/* nav */
+body:not(#_t) .nav-links a{ font-size:15px; font-weight:500; letter-spacing:.03em; }
+
+/* ui */
+body:not(#_t) .btn,
+body:not(#_t) .btn-cta,
+body:not(#_t) .drawer-panel nav a,
+body:not(#_t) .drawer-panel .btn-cta{ font-size:var(--t-ui);letter-spacing:.05em;font-weight:700; }
+
+/* input */
+body:not(#_t) .field input,
+body:not(#_t) .field textarea,
+body:not(#_t) .field select,
+body:not(#_t) .col-search input{ font-size:16px;line-height:1.6;letter-spacing:.02em; }
+
+/* note */
+body:not(#_t) .crumb,
+body:not(#_t) .crumb-bar .crumb,
+body:not(#_t) .article-date,
+body:not(#_t) .col-date,
+body:not(#_t) .case-disclaimer,
+body:not(#_t) .field-note .fn-disc,
+body:not(#_t) .foot-hours,
+body:not(#_t) .foot-bottom,
+body:not(#_t) .psim-hint,
+body:not(#_t) .psim-note,
+body:not(#_t) .cta-foot,
+body:not(#_t) .vdisc,
+body:not(#_t) .note-small,
+body:not(#_t) .area-note,
+body:not(#_t) .form-privacy,
+body:not(#_t) .clabel,
+body:not(#_t) .example-foot .efr .lbl,
+body:not(#_t) .example-box .ehead,
+body:not(#_t) .ptable .rgrp small,
+body:not(#_t) .psim-cap,
+body:not(#_t) .psim-ticks,
+body:not(#_t) .form-error,
+body:not(#_t) .field-note .fn-links a,
+body:not(#_t) .sal-amt small,
+body:not(#_t) .example-foot .efr .plus,
+body:not(#_t) .clinic-pick .pick-sub,
+body:not(#_t) .foot-tel span,
+body:not(#_t) p.cta-foot,
+body:not(#_t) p.psim-hint,
+body:not(#_t) p.psim-note,
+body:not(#_t) .side-hours,
+body:not(#_t) .side-caution,
+body:not(#_t) .wrap .cta-foot,
+body:not(#_t) .wrap .psim-hint,
+body:not(#_t) .wrap .psim-note{ font-size:var(--t-note) !important;line-height:1.8 !important;letter-spacing:.03em !important; }
+
+/* label */
+body:not(#_t) .tag,
+body:not(#_t) .col-cat,
+body:not(#_t) .article-cat,
+body:not(#_t) .chips span,
+body:not(#_t) .field-note .fn-label,
+body:not(#_t) .col-sec-n i,
+body:not(#_t) .shead .en,
+body:not(#_t) .page-hero .en,
+body:not(#_t) .page-eyebrow,
+body:not(#_t) .feature-num,
+body:not(#_t) .page-nav .nav-head .en,
+body:not(#_t) .intro .en,
+body:not(#_t) .related-h .en,
+body:not(#_t) .cf-flag,
+body:not(#_t) .cb-badge,
+body:not(#_t) .cb-kicker,
+body:not(#_t) .tl-step,
+body:not(#_t) .flow .step,
+body:not(#_t) .trial-side-card .tsc-tag,
+body:not(#_t) .tpick-badge,
+body:not(#_t) .field label .req,
+body:not(#_t) .field .opt,
+body:not(#_t) .cc-cat,
+body:not(#_t) .cc-more,
+body:not(#_t) .bonus-highlight .bh-tag,
+body:not(#_t) .related-grid .col-cat,
+body:not(#_t) .col-jump-btn span,
+body:not(#_t) .cf-chip i,
+body:not(#_t) .cgrid-more i,
+body:not(#_t) .vmarquee .vq figcaption{ font-family:var(--font-sans);font-size:var(--t-label);line-height:1.5;letter-spacing:.08em;font-weight:700; }
+
+/* 見出し下の余白リズム */
+body:not(#_t) .shead p{ margin-top:1.1em; }
+body:not(#_t) .article-body h2{ margin-top:2.4em; margin-bottom:.9em; }
+body:not(#_t) .article-body h3{ margin-top:1.9em; margin-bottom:.6em; }
+body:not(#_t) .article-body p + p{ margin-top:1.1em; }
+
+/* ===== 本文中のリンク（全ページ共通・最終） ===== */
+body:not(#_t) main :is(p,li,dd,td) a:not([class]){color:var(--ink);font-weight:500;text-decoration:underline;text-decoration-color:rgba(229,165,12,.55);text-decoration-thickness:1.5px;text-underline-offset:.32em;text-decoration-skip-ink:auto;border-radius:3px;transition:color .2s,text-decoration-color .2s,background-color .2s}
+body:not(#_t) main :is(p,li,dd,td) a:not([class]):hover{color:var(--gold-deep);text-decoration-color:var(--gold-deep);background-color:var(--gold-wash)}
+body:not(#_t) main :is(p,li) a.btn,body:not(#_t) .article-body p a.btn{text-decoration:none;font-weight:700;color:inherit;background-color:transparent}
+body:not(#_t) main p a.btn.btn-gold{color:#fff}
+/* セクション末尾の案内文 → 控えめな案内ボックス */
+body:not(#_t) .sec-outro{max-width:760px;margin:40px auto 0;padding:20px 26px;background:#fff;border-radius:18px;box-shadow:0 1px 0 var(--line);text-align:left;font-size:var(--t-small);line-height:2;color:var(--ink-soft);text-wrap:pretty}
+body:not(#_t) .sec-outro.is-above{margin:0 auto 34px}
+
+/* ===== A1 文字用の金色 → 濃い茶金（白地・生成り地でコントラスト4.5:1以上） ===== */
+:root{ --gold-text:#946500; }
+body:not(#_t) .gold,
+body:not(#_t) .shead .en,
+body:not(#_t) .nav-links a:hover,
+body:not(#_t) .nav-links a.active,
+body:not(#_t) .crumb a:hover,
+body:not(#_t) .page-hero .en,
+body:not(#_t) .tag-soft,
+body:not(#_t) .foot-tel span,
+body:not(#_t) .foot-tel:hover b,
+body:not(#_t) .foot-cols a:hover,
+body:not(#_t) .ph,
+body:not(#_t) .crumb-bar .crumb a:hover,
+body:not(#_t) .to-top,
+body:not(#_t) .drawer-panel .close:hover,
+body:not(#_t) .drawer-panel nav a.active,
+body:not(#_t) .drawer-call b,
+body:not(#_t) .nc-note a,
+body:not(#_t) .nc-chip-sm,
+body:not(#_t) .intro .en,
+body:not(#_t) .feature-num,
+body:not(#_t) .feature .sub,
+body:not(#_t) .symptom-head h2 .u,
+body:not(#_t) .cf-body .col-more,
+body:not(#_t) .col-more,
+body:not(#_t) .col-card:hover .col-more,
+body:not(#_t) .col-tab:hover,
+body:not(#_t) .related-h .en,
+body:not(#_t) .toc-list a::before,
+body:not(#_t) .toc-list a:hover,
+body:not(#_t) .case .who,
+body:not(#_t) a.case:hover .who,
+body:not(#_t) .cb-badge b,
+body:not(#_t) .cb-kicker,
+body:not(#_t) .method-card h3,
+body:not(#_t) .article .ptable tbody td.strong-col,
+body:not(#_t) .calc-line b,
+body:not(#_t) .calc-sub b,
+body:not(#_t) .example-foot .efr .amt,
+body:not(#_t) .price-hero .num,
+body:not(#_t) .ptable .yen,
+body:not(#_t) .tl-step,
+body:not(#_t) .sal-amt small,
+body:not(#_t) .sal-fig b,
+body:not(#_t) .bonus-highlight .bh-main b,
+body:not(#_t) .jt-amt,
+body:not(#_t) .jobtable td b,
+body:not(#_t) .side-card .tel,
+body:not(#_t) a.tel:hover,
+body:not(#_t) .side-line a,
+body:not(#_t) .side-line a:hover,
+body:not(#_t) .clinic-pick .pick input:checked + .pick-box .pick-ttl,
+body:not(#_t) .trial-note b,
+body:not(#_t) .mpick input:checked + span,
+body:not(#_t) .page-nav .nav-head .en,
+body:not(#_t) .col-sec-n,
+body:not(#_t) .rc-no,
+body:not(#_t) .article-body > ul li::marker,
+body:not(#_t) .toc-list a:hover::before,
+body:not(#_t) .field-note .fn-label,
+body:not(#_t) .field-note .fn-links a,
+body:not(#_t) .toc-toggle,
+body:not(#_t) .toc-list a.is-current,
+body:not(#_t) .toc-list a.is-current::before,
+body:not(#_t) .psim-label b,
+body:not(#_t) .psim-seg button:hover,
+body:not(#_t) .psim-cap,
+body:not(#_t) .psim-main em,
+body:not(#_t) .col-search .cs-clear:hover,
+body:not(#_t) .col-count b,
+body:not(#_t) .article-body .col-faq-a a,
+body:not(#_t) .article-toc .toc-list a.is-current,
+body:not(#_t) .cc-cat,
+body:not(#_t) .cc-more,
+body:not(#_t) .cgrid-more,
+body:not(#_t) .article-body p a:hover,
+body:not(#_t) .rq-am,
+body:not(#_t) .rc-no,
+body:not(#_t) .trust-list b,
+body:not(#_t) .price,
+body:not(#_t) .flow .step,
+body:not(#_t) .area-expand,
+body:not(#_t) .clabel,
+body:not(#_t) a.cval.tel:hover,
+body:not(#_t) .an-no,
+body:not(#_t) .tpc-no,
+body:not(#_t) .tpp-k,
+body:not(#_t) .tpp-num b,
+body:not(#_t) .mth-no,
+body:not(#_t) .ny-n,
+body:not(#_t) .ny-foot a,
+body:not(#_t) .cs-head .lead-sub,
+body:not(#_t) .cs-index .ix-n,
+body:not(#_t) .cs-meta .cs-case,
+body:not(#_t) .cs-steps b,
+body:not(#_t) .cs-take b,
+body:not(#_t) .vcard::before,
+body:not(#_t) .nbchk-step,
+body:not(#_t) .nbchk-next-h,
+body:not(#_t) .nbchk-cost b,
+body:not(#_t) .nbarea-g p{ color:var(--gold-text) !important; }
+/* ===== A4 キーボード操作時のフォーカス枠 ===== */
+:focus{ outline:none; }
+:focus-visible{ outline:3px solid #B98100 !important; outline-offset:3px; border-radius:8px; }
+.btn:focus-visible,.btn-cta:focus-visible,.nchat-fab:focus-visible{ outline-offset:4px; border-radius:999px; }
+/* ===== A3 右下「相談する」ボタンが本文やボタンに重ならないように ===== */
+body:not(#_t){ padding-bottom:0; }
+body:not(#_t) .site-footer{ padding-bottom:110px; }
+@media (max-width:1100px){
+ body:not(#_t) .nchat{ right:14px; bottom:14px; }
+ body:not(#_t) .nchat-fab{ padding:0; width:58px; height:58px; justify-content:center; border-radius:50%; }
+ body:not(#_t) .nchat-fab span{ display:none; }
+ body:not(#_t) .nchat-fab svg{ width:26px; height:26px; }
+ body:not(#_t) .site-footer{ padding-bottom:96px; }
+}
+/* ===== B10 フッターの電話番号・受付時間 ===== */
+body:not(#_t) .foot-tels{ gap:10px; margin-top:24px; }
+body:not(#_t) .foot-tel{ display:flex; align-items:center; gap:14px; min-height:60px; padding:10px 20px 10px 14px; background:#fff; border:1.5px solid #EADFC4; border-radius:16px; width:max-content; max-width:100%; transition:border-color .2s, box-shadow .2s; }
+body:not(#_t) .foot-tel:hover{ border-color:var(--gold); box-shadow:var(--shadow-sm); }
+body:not(#_t) .foot-tel span{ font-size:13px; padding:4px 12px; background:var(--gold-wash); border:0; }
+body:not(#_t) .foot-tel b{ font-size:24px; letter-spacing:.04em; }
+body:not(#_t) .foot-hours{ margin-top:14px; font-size:15px; font-weight:500; color:var(--ink-soft); }
+/* ===== C11 表示アニメーションを控えめに ===== */
+body:not(#_t) .reveal{ transform:translateY(14px); filter:none; transition:opacity .55s ease, transform .55s ease; }
+body:not(#_t) .reveal.in{ transform:none; }
+body:not(#_t) .reveal-left,body:not(#_t) .reveal-right{ transform:translateY(14px); }
+@media (prefers-reduced-motion: reduce){ body:not(#_t) .reveal{ opacity:1 !important; transform:none !important; transition:none !important; } *{ animation-duration:.01ms !important; animation-iteration-count:1 !important; } }
+/* ===== C12 セクション余白の統一 ===== */
+body:not(#_t) .section{ padding-top:96px; padding-bottom:96px; }
+body:not(#_t) .shead{ margin-bottom:48px; }
+@media (max-width:720px){ body:not(#_t) .section{ padding-top:64px; padding-bottom:64px; } body:not(#_t) .shead{ margin-bottom:32px; } }
+
+/* コラム一覧の検索・絞り込みは追従させない */
+body:not(#_t) .col-filter{position:static !important;top:auto !important;box-shadow:none !important;backdrop-filter:none !important}
+/* ===== フッター：レイアウト再設計 ===== */
+body:not(#_t) .site-footer .foot-top{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:48px 64px;align-items:start}
+body:not(#_t) .foot-brand{max-width:none}
+body:not(#_t) .foot-brand > p:first-of-type{max-width:30em}
+body:not(#_t) .foot-tels{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:26px}
+body:not(#_t) .foot-tel{width:auto;max-width:none;min-height:72px;flex-direction:column;align-items:flex-start;justify-content:center;gap:6px;padding:14px 20px}
+body:not(#_t) .foot-tel b{font-size:22px;line-height:1.2}
+body:not(#_t) .foot-cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;padding-top:6px}
+@media (max-width:1000px){
+ body:not(#_t) .site-footer .foot-top{grid-template-columns:1fr;gap:40px}
+ body:not(#_t) .foot-cols{border-top:1px solid var(--line);padding-top:32px}
+}
+@media (max-width:520px){
+ body:not(#_t) .foot-tels{grid-template-columns:1fr}
+ body:not(#_t) .foot-tel{flex-direction:row;align-items:center;gap:14px}
+ body:not(#_t) .foot-cols{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+/* ===== 見せ方の統一（旧コンポーネント） ===== */
+/* 患者様の声カード */
+body:not(#_t) .voice-grid{gap:20px}
+body:not(#_t) .vcard{border:0;border-radius:24px;padding:30px 30px 24px;box-shadow:0 1px 0 var(--line),0 12px 30px rgba(120,90,20,.07);display:flex;flex-direction:column}
+body:not(#_t) .vcard::before{top:18px;left:auto;right:24px;font-size:56px;opacity:.35}
+body:not(#_t) .vcard .tag{align-self:flex-start;font-size:13px;font-weight:700;padding:4px 14px;background:var(--gold-pale);color:#6b5a2e !important}
+body:not(#_t) .vcard p.q{font-family:var(--font-serif);font-size:19px;line-height:1.85;font-weight:700;color:var(--ink);margin:16px 0 18px;letter-spacing:.03em}
+body:not(#_t) .vcard .ctx{margin-top:auto;padding-top:14px;border-top:1px dashed #EADFC4;font-size:14.5px;line-height:1.85;color:var(--ink-soft)}
+body:not(#_t) .vdisc{background:#fff;border-radius:18px;box-shadow:0 1px 0 var(--line);font-size:14px;line-height:1.9;padding:20px 24px}
+body:not(#_t) .sec-h h2{font-family:var(--font-serif);font-weight:800;font-size:clamp(22px,19px + .8vw,27px);letter-spacing:.05em}
+/* 注意書き・補足ボックス */
+body:not(#_t) .note-box{background:#fff;border:0;border-radius:22px;padding:28px 32px;box-shadow:0 1px 0 var(--line),0 10px 26px rgba(120,90,20,.06)}
+body:not(#_t) .note-box h3{padding-bottom:14px;margin-bottom:16px !important;border-bottom:1px dashed #EADFC4}
+body:not(#_t) .note-box h3 .ic{background:var(--gold-wash);border-radius:12px}
+body:not(#_t) .note-box li{font-size:var(--t-small) !important;line-height:1.95}
+/* ページ末尾の相談帯 */
+body:not(#_t) .cta-band{background:var(--cream);border-top:0;padding:88px 0}
+body:not(#_t) .cta-band .wrap{max-width:900px;background:#fff;border-radius:32px;padding:56px 48px;box-shadow:0 1px 0 var(--line),0 20px 50px rgba(120,90,20,.10)}
+body:not(#_t) .cta-band p{max-width:34em;color:var(--ink-soft)}
+@media (max-width:720px){ body:not(#_t) .cta-band{padding:56px 0} body:not(#_t) .cta-band .wrap{margin:0 16px;padding:36px 22px;border-radius:24px} body:not(#_t) .cta-band .btn{width:100%;justify-content:center} }
+/* 採用：募集要項・給与・仕事紹介 */
+body:not(#_t) .jobtable{border:0;border-radius:22px;box-shadow:0 1px 0 var(--line),0 12px 30px rgba(120,90,20,.07);border-collapse:separate;border-spacing:0}
+body:not(#_t) .jobtable th{background:var(--cream);font-size:15px !important;padding:22px 24px;border-bottom:1px solid #F1EADA}
+body:not(#_t) .jobtable td{padding:22px 28px;border-bottom:1px solid #F1EADA}
+body:not(#_t) .sal-card{border:0;border-radius:24px;padding:30px 32px;box-shadow:0 1px 0 var(--line),0 12px 30px rgba(120,90,20,.07)}
+body:not(#_t) .sal-head{border-bottom:1px dashed #EADFC4}
+body:not(#_t) .workrow{border:0;border-radius:28px;box-shadow:0 1px 0 var(--line),0 14px 34px rgba(120,90,20,.08);gap:0}
+body:not(#_t) .work-text{padding:40px 44px}
+@media (max-width:760px){
+ body:not(#_t) .jobtable,body:not(#_t) .jobtable tbody,body:not(#_t) .jobtable tr,body:not(#_t) .jobtable th,body:not(#_t) .jobtable td{display:block;width:100%}
+ body:not(#_t) .jobtable th{padding:16px 20px 8px;border-bottom:0}
+ body:not(#_t) .jobtable td{padding:0 20px 18px}
+ body:not(#_t) .work-text{padding:28px 24px}
+ body:not(#_t) .salary-cards{grid-template-columns:1fr}
+}
+
+/* ===== コラム記事の見せ方 ===== */
+body:not(#_t) .article-body .lead{border-left:0 !important;padding:0 !important;color:var(--ink);font-weight:500}
+body:not(#_t) .article-body .pull{background:#fff !important;border:0 !important;border-radius:22px !important;padding:26px 28px !important;box-shadow:0 0 0 2px var(--gold-pale),0 12px 28px rgba(120,90,20,.07) !important;margin:2.2em 0 !important}
+body:not(#_t) .article-body .pull::before{content:none !important;display:none !important}
+body:not(#_t) .article-body .pull .pull-t{display:flex;align-items:center;gap:10px;margin:0 0 12px !important;padding-bottom:12px;border-bottom:1px dashed #EADFC4}
+body:not(#_t) .article-body .pull .pull-t::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--gold);flex:0 0 auto}
+body:not(#_t) .article-toc{background:#fff;border:0;border-radius:22px;padding:24px 28px 12px;box-shadow:0 1px 0 var(--line),0 10px 26px rgba(120,90,20,.06)}
+body:not(#_t) .col-card{border:0;border-radius:22px;box-shadow:0 1px 0 var(--line),0 10px 26px rgba(120,90,20,.07)}
+body:not(#_t) .col-card:hover{box-shadow:0 1px 0 var(--line),0 18px 38px rgba(120,90,20,.12)}
+body:not(#_t) .ccard{border:0 !important;border-radius:20px !important;box-shadow:0 1px 0 var(--line),0 8px 22px rgba(120,90,20,.06) !important}
+body:not(#_t) .col-featured{border:0;border-radius:28px;box-shadow:0 1px 0 var(--line),0 16px 40px rgba(120,90,20,.09)}
+body:not(#_t) .article-body .col-faq-item,body:not(#_t) .article-body .note-box{border:0;border-radius:18px;box-shadow:0 1px 0 var(--line),0 8px 22px rgba(120,90,20,.06)}
+/* 施術方法・特徴の段（画像＋文章） */
+body:not(#_t) .feature-img img,body:not(#_t) .feature-img .media{border-radius:28px}
+body:not(#_t) .float-badge{border-radius:18px;box-shadow:0 10px 26px rgba(120,90,20,.14)}
+
+/* 目次・FAQ・導入文の読みやすさ */
+body:not(#_t) main .toc-list a,body:not(#_t) main #article-toc a{text-decoration:none !important;background:none !important;font-weight:500}
+body:not(#_t) main .toc-list a:hover{color:var(--gold-text,#946500) !important}
+body:not(#_t) .article-body .lead,body:not(#_t) .article-body > .lead,body:not(#_t) .article .article-body > .lead{font-family:var(--font-sans) !important;letter-spacing:.02em !important;line-height:2 !important;font-weight:500 !important}
+body:not(#_t) .col-faq-q,body:not(#_t) .article-body .col-faq-q,body:not(#_t) .article .col-faq-q,body:not(#_t) .nbfaq-q,body:not(#_t) .article-body .nbfaq-q{font-family:var(--font-sans) !important;font-weight:700 !important;letter-spacing:.02em !important;line-height:1.7 !important}
+body:not(#_t) .col-faq-a,body:not(#_t) .article-body .col-faq-a,body:not(#_t) .nbfaq-a{letter-spacing:.02em !important;line-height:1.95 !important}
+body:not(#_t) .article-body p,body:not(#_t) .article-body li{letter-spacing:.02em}
